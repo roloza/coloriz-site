@@ -20,6 +20,11 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
 import { NgxUploaderModule } from 'ngx-uploader';
 import { DropzoneModule, DropzoneConfigInterface, DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { AnalyseImageComponent } from './pages/analyse-image/analyse-image.component';
+import { WidgetLastQueriesComponent } from './components/widgets/widget-last-queries/widget-last-queries.component';
+import { WidgetMostQueriesComponent } from './components/widgets/widget-most-queries/widget-most-queries.component';
+import { WidgetKeywordsCategoriesComponent } from './components/widgets/widget-keywords-categories/widget-keywords-categories.component';
+import { WidgetBestColorsComponent } from './components/widgets/widget-best-colors/widget-best-colors.component';
+import { WidgetQueryFormComponent } from './components/widgets/widget-query-form/widget-query-form.component';
 
 
 
@@ -35,7 +40,12 @@ import { AnalyseImageComponent } from './pages/analyse-image/analyse-image.compo
     SearchImageFormComponent,
     ResultsComponent,
     UploadFormComponent,
-    AnalyseImageComponent
+    AnalyseImageComponent,
+    WidgetLastQueriesComponent,
+    WidgetMostQueriesComponent,
+    WidgetKeywordsCategoriesComponent,
+    WidgetBestColorsComponent,
+    WidgetQueryFormComponent
   ],
   imports: [
     BrowserModule,
