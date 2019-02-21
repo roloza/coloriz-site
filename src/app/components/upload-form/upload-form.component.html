@@ -1,0 +1,37 @@
+<div class="row mb-4">
+  <div class="col-md-12 mb-4">
+      <div class="card text-left">
+
+          <div class="card-body">
+            <div class="card-title">Images à analyser</div>
+            <p>À l'aide de cet outil, découvrez la palette de couleurs d'une photo que vous aimez. Simplement faire glisser votre photo dans notre outil gratuit et la palette s'affichera.</p>
+            <dropzone class="mb-2" [config]="config" [message]="'Cliquez ou déplacez une image ici - taille max: 2Mb'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+            <div class="btn btn-primary btn-block" (click)='resetDropzoneUploads()'>Réinitialisation</div>
+          </div>
+      </div>
+
+  </div>
+</div>
+<div class="row mb-4" *ngIf="images.length > 0">
+  <div class="col-xl-3 col-lg-4 col-md-6 mb-4" *ngFor="let image of images">
+    <div class="card text-left">
+      <div class="card-body card-palette">
+        <div class="palette-img-container">
+          <img [src]="image.url">
+        </div>
+        <div class="content">
+          <h4>Couleur dominante</h4>
+          <div class="area mb-4">
+            <div class="color" [ngStyle]="{background: image.color ? image.color : '#FFF'}"></div>
+          </div>
+          <h4>Palette</h4>
+          <div class="area">
+            <div *ngFor="let paletteColor of image.palette" class="color"  [ngStyle]="{background: paletteColor ? paletteColor : '#FFF'}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

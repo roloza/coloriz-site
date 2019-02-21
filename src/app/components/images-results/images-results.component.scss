@@ -1,0 +1,11 @@
+.search-result .palette-img-container img{
+    display: none;
+}
+.search-result:hover .palette-img-container img{
+    display: block;
+}
+.number {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+}

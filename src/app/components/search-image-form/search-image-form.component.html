@@ -1,0 +1,8 @@
+<div class="d-flex align-items-center">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <div class="search-bar">
+      <input formControlName="query" type="text" placeholder="De quelle couleur est...">
+      <i class="search-icon text-muted i-Magnifi-Glass1"></i>
+  </div>
+</form>
+</div>
