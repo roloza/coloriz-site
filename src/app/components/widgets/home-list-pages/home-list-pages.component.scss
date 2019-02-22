@@ -1,0 +1,14 @@
+.avatar {
+    position: relative;
+    background: #4d2673;
+}
+
+.avatar i {
+    font-size: 48px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    color: #FFF;
+}

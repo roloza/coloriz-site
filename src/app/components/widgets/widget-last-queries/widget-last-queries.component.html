@@ -1,5 +1,19 @@
 <div class="card mb-4">
     <div class="card-body">
         <div class="card-title">Les dernières recherches</div>
+        <div class="mb-4" >
+            <div class="d-flex align-items-center border-bottom-dotted-dim pb-3 mb-3" *ngFor="let value of cpt">
+                <div class="avatar-md rounded mr-3" style="background: #DDD"></div>
+                <div class="flex-grow-1">
+                    <h6 class="m-0">Océan indien</h6>
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary btn-rounded btn-sm">Voir</button>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container text-center">
+            <button class="btn btn-primary btn-rounded">Voir plus <i class="i-Left-To-Right"></i></button>
+        </div>
     </div>
 </div>

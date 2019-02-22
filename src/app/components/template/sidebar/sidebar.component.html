@@ -1,21 +1,41 @@
 <div class="side-content-wrap">
   <div class="sidebar-left" [ngClass]="menuState" data-perfect-scrollbar data-suppress-scroll-x="true">
       <ul class="navigation-left">
-          <li class="nav-item active" data-item="dashboard">
-              <a class="nav-item-hold" routerLink="/">
-                  <i class="nav-icon i-Home1"></i>
-                  <span class="nav-text">Vue d'ensemble</span>
-              </a>
-              <div class="triangle"></div>
-          </li>
-          <li class="nav-item" data-item="uikits">
-              <a class="nav-item-hold" routerLink="analyser-image">
-                  <i class="nav-icon i-Pipette"></i>
-                  <span class="nav-text">Extraire les couleurs d'une image</span>
-              </a>
-              <div class="triangle"></div>
-          </li>
-          
+            <li class="nav-item active" data-item="Accueil">
+                <a class="nav-item-hold" routerLink="/">
+                    <i class="nav-icon i-Home1"></i>
+                    <span class="nav-text">Accueil</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item" data-item="coloriz">
+                    <a class="nav-item-hold" routerLink="coloriz">
+                        <i class="nav-icon i-Drop"></i>
+                        <span class="nav-text">Coloriz</span>
+                    </a>
+                    <div class="triangle"></div>
+                </li>
+            <li class="nav-item" data-item="analyser-image">
+                <a class="nav-item-hold" routerLink="analyser-image">
+                    <i class="nav-icon i-Pipette"></i>
+                    <span class="nav-text">Analyse d'images</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item" data-item="browsershot">
+                <a class="nav-item-hold" routerLink="browsershot">
+                    <i class="nav-icon i-Landscape"></i>
+                    <span class="nav-text">BrowserShot</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
+            <li class="nav-item" data-item="image-compression">
+                <a class="nav-item-hold" routerLink="image-compression">
+                    <i class="nav-icon i-Optimization"></i>
+                    <span class="nav-text">Compressor</span>
+                </a>
+                <div class="triangle"></div>
+            </li>
       </ul>
   </div>
 </div>

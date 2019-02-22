@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widget-last-queries.component.scss']
 })
 export class WidgetLastQueriesComponent implements OnInit {
-
+  cpt = [0, 1, 2];
+  
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

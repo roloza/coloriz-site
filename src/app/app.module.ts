@@ -25,6 +25,10 @@ import { WidgetMostQueriesComponent } from './components/widgets/widget-most-que
 import { WidgetKeywordsCategoriesComponent } from './components/widgets/widget-keywords-categories/widget-keywords-categories.component';
 import { WidgetBestColorsComponent } from './components/widgets/widget-best-colors/widget-best-colors.component';
 import { WidgetQueryFormComponent } from './components/widgets/widget-query-form/widget-query-form.component';
+import { ColorizComponent } from './pages/coloriz/coloriz.component';
+import { BrowsershotComponent } from './pages/browsershot/browsershot.component';
+import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
+import { HomeListPagesComponent } from './components/widgets/home-list-pages/home-list-pages.component';
 
 
 
@@ -45,7 +49,11 @@ import { WidgetQueryFormComponent } from './components/widgets/widget-query-form
     WidgetMostQueriesComponent,
     WidgetKeywordsCategoriesComponent,
     WidgetBestColorsComponent,
-    WidgetQueryFormComponent
+    WidgetQueryFormComponent,
+    ColorizComponent,
+    BrowsershotComponent,
+    ImageOptimiseComponent,
+    HomeListPagesComponent
   ],
   imports: [
     BrowserModule,
