@@ -19,7 +19,7 @@ export class UploadFormComponent {
       'Cache-Control': null,
       'X-Requested-With': null
     },
-    url: 'http://51.15.132.218/api/upload',
+    url: 'http://51.15.210.203/api/upload',
   };
   public images: Array<ImagePalette> = [];
 

@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
 export class ApiService {
 
   // url = "http://212.47.229.135/api/";
-  url = "http://51.15.132.218/api/";
+  url = "http://51.15.210.203/api/";
 
   constructor(private httpClient: HttpClient) {}
 
@@ -23,6 +23,11 @@ export class ApiService {
   postColor(img: string): Observable<any> {
     let httpParams = new HttpParams().append("img", img);
     return this.httpClient.post(this.url + "colors", httpParams);
+  }
+
+  postBrowsershot(url: string): Observable<any> {
+    let httpParams = new HttpParams().append("url", url);
+    return this.httpClient.post(this.url + "browsershot", httpParams);
   }
 
   uploadRequest(files: Array<File>) {
