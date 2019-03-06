@@ -8,6 +8,7 @@ import { AnalyseImageComponent } from './pages/analyse-image/analyse-image.compo
 import { ColorizComponent } from './pages/coloriz/coloriz.component';
 import { BrowsershotComponent } from './pages/browsershot/browsershot.component';
 import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
+import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'analyser-image', component: AnalyseImageComponent },
   { path: 'coloriz', component: ColorizComponent },
   { path: 'browsershot', component: BrowsershotComponent },
+  { path: 'browsershot/screenshot', component: ScreenshotComponent },
   { path: 'image-compression', component: ImageOptimiseComponent },
 ];
 

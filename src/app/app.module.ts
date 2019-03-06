@@ -31,6 +31,7 @@ import { BrowsershotComponent } from './pages/browsershot/browsershot.component'
 import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
 import { HomeListPagesComponent } from './components/widgets/home-list-pages/home-list-pages.component';
 import { BrowsershotFormComponent } from './components/browsershot-form/browsershot-form.component';
+import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
 
 
 
@@ -56,7 +57,8 @@ import { BrowsershotFormComponent } from './components/browsershot-form/browsers
     BrowsershotComponent,
     ImageOptimiseComponent,
     HomeListPagesComponent,
-    BrowsershotFormComponent
+    BrowsershotFormComponent,
+    ScreenshotComponent
   ],
   imports: [
     BrowserModule,
