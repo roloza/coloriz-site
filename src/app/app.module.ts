@@ -30,6 +30,7 @@ import { ColorizComponent } from './pages/coloriz/coloriz.component';
 import { BrowsershotComponent } from './pages/browsershot/browsershot.component';
 import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
 import { HomeListPagesComponent } from './components/widgets/home-list-pages/home-list-pages.component';
+import { BrowsershotFormComponent } from './components/browsershot-form/browsershot-form.component';
 
 
 
@@ -54,7 +55,8 @@ import { HomeListPagesComponent } from './components/widgets/home-list-pages/hom
     ColorizComponent,
     BrowsershotComponent,
     ImageOptimiseComponent,
-    HomeListPagesComponent
+    HomeListPagesComponent,
+    BrowsershotFormComponent
   ],
   imports: [
     BrowserModule,

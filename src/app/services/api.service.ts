@@ -29,6 +29,11 @@ export class ApiService {
     return this.httpClient.post(this.url + "colors", httpParams);
   }
 
+  postBrowsershot(url: string): Observable<any> {
+    let httpParams = new HttpParams().append("url", url);
+    return this.httpClient.post(this.url + "browsershot", httpParams);
+  }
+
   uploadRequest(files: Array<File>) {
     return new Promise((resolve, reject) => {
       var formData: any = new FormData();
