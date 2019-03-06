@@ -1,16 +1,21 @@
-import { Component, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener, OnInit  } from '@angular/core';
+import { fadeAnimation } from './animations';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeAnimation]
 })
 export class AppComponent {
 
   @Output() actionMenu = new EventEmitter<void>();
   menuState = "open";
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.hideMenuIfMobile()
   }
 
@@ -18,6 +23,15 @@ export class AppComponent {
   onResize(event) {
     this.hideMenuIfMobile()
   }
+
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+    });
+}
 
   toggleMenu(){
     this.menuState = this.menuState == "open" ? "" : "open";

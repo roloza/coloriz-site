@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -62,7 +63,8 @@ import { HomeListPagesComponent } from './components/widgets/home-list-pages/hom
     ReactiveFormsModule,
     NgxUploaderModule,
     DropzoneModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   exports: [
     ThousandSuffixesPipe

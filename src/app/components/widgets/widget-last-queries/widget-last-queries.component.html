@@ -2,13 +2,13 @@
     <div class="card-body">
         <div class="card-title">Les dernières recherches</div>
         <div class="mb-4" >
-            <div class="d-flex align-items-center border-bottom-dotted-dim pb-3 mb-3" *ngFor="let value of cpt">
-                <div class="avatar-md rounded mr-3" style="background: #DDD"></div>
+            <div class="d-flex align-items-center border-bottom-dotted-dim pb-3 mb-3" *ngFor="let query of queries">
+                <div class="avatar-md rounded mr-3" [ngStyle]="{background: query.color ? query.color : '#DDD'}"></div>
                 <div class="flex-grow-1">
-                    <h6 class="m-0">Océan indien</h6>
+                    <h6 class="m-0">{{ query.query }}</h6>
                 </div>
                 <div>
-                    <button class="btn btn-outline-primary btn-rounded btn-sm">Voir</button>
+                    <button class="btn btn-outline-primary btn-rounded btn-sm" [routerLink]="['/results']" [queryParams]="{query:query.query}">Voir</button>
                 </div>
             </div>
         </div>

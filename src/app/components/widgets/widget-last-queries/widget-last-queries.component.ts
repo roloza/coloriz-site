@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-widget-last-queries',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetLastQueriesComponent implements OnInit {
   cpt = [0, 1, 2];
+  queries: any[];
   
-  constructor() { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
-    
+    this.apiService.getLastQueries().subscribe(
+      data => {
+        this.queries = data.results;
+      }
+    )
   }
 
 }

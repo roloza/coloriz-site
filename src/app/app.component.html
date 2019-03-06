@@ -1,6 +1,6 @@
 <app-header (actionMenu)="toggleMenu()"></app-header>
 <app-sidebar [menuState]="menuState"></app-sidebar>
-<div class="main-content-wrap d-flex flex-column" [ngClass]="menuState == 'open' ? 'sidenav-open' : ''">
-    <router-outlet></router-outlet>
+<div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" class="main-content-wrap d-flex flex-column" [ngClass]="menuState == 'open' ? 'sidenav-open' : ''">
+    <router-outlet #o="outlet"></router-outlet>
 </div>
 <app-footer></app-footer>

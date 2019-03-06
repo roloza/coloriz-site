@@ -64,3 +64,27 @@ dropzone > .dropzone.dz-wrapper.dz-single .dz-preview {
     margin: auto;
     display: inline-block;
 }
+
+// Colonnes hauteurs égales
+.row.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.row.row-eq-height > [class*='col-'] {
+
+    margin-bottom: 20px;
+    
+}
+
+.row-eq-height .card, .h-100 {
+    height: 100%;
+}
+
+.btn-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
