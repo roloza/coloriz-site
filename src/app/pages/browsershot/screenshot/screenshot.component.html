@@ -1,0 +1,20 @@
+<div class="card mb-4" *ngIf="img">
+  <div class="card-body">
+    <div class="card-title">Aperçu du site</div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="img-container o-hidden browser">
+          <div class="browser-mockup with-url">
+            <img class="img-fluid" src="{{ img }}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader" *ngIf="showLoader">
+  <div class="loader-bubble loader-bubble-primary m-5"></div>
+  <h5>La génération de votre capture d'écran est en cours ...</h5>
+
+</div>
