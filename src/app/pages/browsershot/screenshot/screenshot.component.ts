@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../../services/api.service';
+import { ToasterService } from '../../../services/toaster.service';
+
 
 @Component({
   selector: 'app-screenshot',
@@ -10,7 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ScreenshotComponent implements OnInit {
   img: string;
   url: string;
-  errorMessage: string = "";
   public showLoader: boolean = false;
   private sub;
 
@@ -18,6 +19,7 @@ export class ScreenshotComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private apiService: ApiService,
+    private toasterService: ToasterService,
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class ScreenshotComponent implements OnInit {
             data => {
               this.img = data.img;
               if (data.state == "error") {
-                this.errorMessage = data.message;
+                this.toasterService.showError(data.message)
               }
               this.showLoader = false;
             }
@@ -46,5 +48,4 @@ export class ScreenshotComponent implements OnInit {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 }
