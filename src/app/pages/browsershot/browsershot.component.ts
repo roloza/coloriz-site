@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BrowsershotComponent implements OnInit {
 
 
-  constructor(
-    
-  ) { }
+  constructor() { }
 
   ngOnInit() {
 

@@ -1,15 +1,15 @@
 <div class="card mb-4">
   <div class="card-body">
       <div class="card-title">Créez des screenshots de sites web</div>
-      <div class="row">
-          <div class="col-lg-8 offset-lg-2">
+      <div class="row" style="margin-bottom: 10px;">
+          <div class="col-lg-8">
               <form [formGroup]="browsershotForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                  <div class="col">
+                  <div class="col" style="padding-right: 5px;">
                       <input formControlName="url" type="text" class="form-control" placeholder="URL du site">
                   </div>
-                  <div class="col-auto">
-                      <button class="btn btn-primary" *ngIf="!showLoader">
+                  <div class="col-auto" style="padding-left: 5px">
+                      <button class="btn btn-primary btn-search" *ngIf="!showLoader">
                         <i class="i-Magnifi-Glass1"></i>
                       </button>
                       <button class="btn btn-primary" type="button" disabled *ngIf="showLoader">
@@ -20,6 +20,11 @@
                 </div>
               </form>
           </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a href="#">Besoin d'aide?</a>
+        </div>
       </div>
   </div>
 </div>

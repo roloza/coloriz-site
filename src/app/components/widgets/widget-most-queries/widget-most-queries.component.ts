@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-widget-most-queries',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widget-most-queries.component.scss']
 })
 export class WidgetMostQueriesComponent implements OnInit {
+  queries: any[];
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    this.apiService.getBestQueries().subscribe(
+      data => {
+        this.queries = data.results;
+      }
+    )
   }
 
 }

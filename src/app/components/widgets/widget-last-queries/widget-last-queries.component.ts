@@ -7,9 +7,8 @@ import { ApiService } from '../../../services/api.service';
   styleUrls: ['./widget-last-queries.component.scss']
 })
 export class WidgetLastQueriesComponent implements OnInit {
-  cpt = [0, 1, 2];
   queries: any[];
-  
+
   constructor(
     private apiService: ApiService
   ) { }

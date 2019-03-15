@@ -17,7 +17,7 @@
 
 dropzone > .dropzone.dz-wrapper {
     min-height: 280px!important;
-    
+
 }
 
 dropzone > .dropzone.dz-wrapper.dz-single .dz-message {
@@ -76,7 +76,7 @@ dropzone > .dropzone.dz-wrapper.dz-single .dz-preview {
 .row.row-eq-height > [class*='col-'] {
 
     margin-bottom: 20px;
-    
+
 }
 
 .row-eq-height .card, .h-100 {
@@ -89,3 +89,9 @@ dropzone > .dropzone.dz-wrapper.dz-single .dz-preview {
     left: 0;
     right: 0;
 }
+
+.btn-search {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+

@@ -12,7 +12,7 @@ export class UploadFormComponent {
   public config: DropzoneConfigInterface = {
     clickable: true,
     maxFiles: 50,
-    maxFilesize: 2,
+    maxFilesize: 10,
     acceptedFiles: 'image/*',
     method: 'POST',
     headers: {
@@ -39,7 +39,7 @@ export class UploadFormComponent {
 
   public onUploadSuccess(args: any): void {
     this.images.push({
-      url:  "http://51.15.132.218" + args[1].filepath,
+      url:  'http://51.15.210.203' + args[1].filepath,
       color: args[1].color,
       palette: args[1].palette
     });
