@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 import { ApiService } from './services/api.service';
 
 import { ThousandSuffixesPipe } from './pipes/thousand-suffixes-pipe';
@@ -70,7 +71,8 @@ import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.c
     DropzoneModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastModule.forRoot()
+    ModalModule.forRoot(),
+    ToastrModule.forRoot(),
   ],
   exports: [
     ThousandSuffixesPipe

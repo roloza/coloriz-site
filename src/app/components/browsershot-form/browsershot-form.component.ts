@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../../services/api.service';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-
-
 
 @Component({
   selector: 'app-browsershot-form',
@@ -23,11 +20,9 @@ export class BrowsershotFormComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private apiService: ApiService,
-    private toasterManager: ToastsManager,
     private vcRef:ViewContainerRef,
-
+    private toastr: ToastrService
   ) {
-    this.toasterManager.setRootViewContainerRef(vcRef);
   }
 
   ngOnInit() {
@@ -39,9 +34,8 @@ export class BrowsershotFormComponent implements OnInit {
       data => {
         this.showLoader = false;
         if (data.state === 'error') {
-          this.toasterManager.error(data.message, 'Oops!');
-
-        } else{
+          this.toastr.error(data.message, 'Oops!');
+        } else {
           this.router.navigate(['browsershot/screenshot'], { queryParams: { img: data.img } });
         }
       }
