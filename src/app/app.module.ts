@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -73,6 +74,7 @@ import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.c
     BrowserAnimationsModule,
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   exports: [
     ThousandSuffixesPipe

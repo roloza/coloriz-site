@@ -32,8 +32,15 @@ export class ApiService {
     return this.httpClient.post(this.url + 'colors', httpParams);
   }
 
-  postBrowsershot(url: string): Observable<any> {
-    const httpParams = new HttpParams().append('url', url);
+  postBrowsershot(params: string[]): Observable<any> {
+    console.log(params);
+    const httpParams = new HttpParams()
+      .append('url', params[0])
+      .append('type', params[1])
+      .append('device', params[2])
+      .append('width', params[3])
+      .append('height', params[4])
+      .append('fullpage', params[5]);
     return this.httpClient.post(this.url + 'browsershot', httpParams);
   }
 

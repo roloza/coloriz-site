@@ -5,10 +5,13 @@
           <div class="col-lg-8">
               <form [formGroup]="browsershotForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                  <div class="col" style="padding-right: 5px;">
+                  <div class="col-sm-1" style="padding-right: 5px; text-align: right;">
+                      <span class="btn btn-outline-primary" (click)="openModal(templateHelpModal)">Aide</span>
+                  </div>
+                  <div class="col" style="padding-right: 5px; padding-left: 5px;">
                       <input formControlName="url" type="text" class="form-control" placeholder="URL du site">
                   </div>
-                  <div class="col-auto" style="padding-left: 5px">
+                  <div class="col-auto" style="padding-left: 5px;">
                       <button class="btn btn-primary btn-search" *ngIf="!showLoader">
                         <i class="i-Magnifi-Glass1"></i>
                       </button>
@@ -21,10 +24,110 @@
               </form>
           </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <a href="#">Besoin d'aide?</a>
+      <div class="row" style="margin-bottom: 10px;">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-sm-11 offset-sm-1">
+                <span class="badge badge-pill badge-outline-primary p-2 mr-1">Type : {{ type }}</span>
+                <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="type === 'mobile'">Appareil : {{ device }}</span>
+                <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="type === 'desktop'">Résolution : {{width}}x{{height}}</span>
+                <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="fullpage">Hauteur : {{fullpage}}</span>
+                <span class="btn badge badge-pill badge-primary p-2 mr-1" (click)="openModal(templateParamsModal)">Editer</span>
+            </div>
+          </div>
         </div>
       </div>
   </div>
 </div>
+
+
+<ng-template #templateHelpModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Besoin d'aide?</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is nested modal.<br>
+
+  </div>
+  <div class="modal-footer">
+    <button *ngIf="modalRef" type="button" class="btn btn-secondary" (click)="closeModal()">Fermer</button>
+  </div>
+</ng-template>
+
+
+<ng-template #templateParamsModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Paramètres de votre recherche</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form [formGroup]="paramsForm" (ngSubmit)="onSubmit()">
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-3">Type d'appareil</div>
+          <div class="col">
+            <label class="radio radio-primary">
+                <input formControlName="type" type="radio"  value="mobile" (change)="handleChange($event)">
+                <span>Mobile</span>
+                <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col">
+            <label class="radio radio-primary">
+              <input formControlName="type" type="radio" value="desktop" checked (change)="handleChange($event)" checked>
+              <span>Desktop</span>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+
+        <hr>
+        <div class="row" *ngIf="type === 'desktop'">
+            <div class="col-md-3">Résolution</div>
+            <div class="col modal-resolution">
+              <input class="form-control" type="text" value="1366" formControlName="width"> X <input class="form-control" type="text" value="768" formControlName="height">
+            </div>
+        </div>
+        <div class="row" *ngIf="type === 'mobile'">
+            <div class="col-md-3">Modèle</div>
+            <div class="col">
+                <select class="form-control" formControlName="device">
+                    <option value="Iphone X">Iphone X</option>
+                    <option value="Nexus 6">Nexus 6</option>
+                    <option value="Pixel 2">Pixel 2</option>
+                  </select>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-3">Hauteur</div>
+          <div class="col">
+            <label class="radio radio-primary">
+                <input type="radio" formControlName="fullpage" value="0" checked>
+                <span>Ligne de flottaison</span>
+                <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col">
+            <label class="radio radio-primary">
+                <input type="radio" formControlName="fullpage" value="1">
+                <span>Toute la page web</span>
+                <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button *ngIf="modalRef" type="button" class="btn btn-secondary" (click)="closeModal()">Fermer</button>
+        <button *ngIf="modalRef" type="button" class="btn btn-primary" (click)="submitModal()">Enregistrer</button>
+      </div>
+    </form>
+  </ng-template>
