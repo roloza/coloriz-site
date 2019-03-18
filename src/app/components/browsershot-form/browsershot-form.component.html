@@ -5,9 +5,6 @@
           <div class="col-lg-8">
               <form [formGroup]="browsershotForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                  <div class="col-sm-1" style="padding-right: 5px; text-align: right;">
-                      <span class="btn btn-outline-primary" (click)="openModal(templateHelpModal)">Aide</span>
-                  </div>
                   <div class="col" style="padding-right: 5px; padding-left: 5px;">
                       <input formControlName="url" type="text" class="form-control" placeholder="URL du site">
                   </div>
@@ -27,9 +24,12 @@
       <div class="row" style="margin-bottom: 10px;">
         <div class="col-lg-8">
           <div class="row">
-            <div class="col-sm-11 offset-sm-1">
+              <div class="col-auto" style="padding-right: 5px; margin-bottom: 5px;">
+                  <span class="btn btn-sm btn-outline-success" (click)="openModal(templateHelpModal)">Aide</span>
+              </div>
+            <div class="col">
                 <span class="badge badge-pill badge-outline-primary p-2 mr-1">Type : {{ type }}</span>
-                <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="type === 'mobile'">Appareil : {{ device }}</span>
+                <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="type === 'mobile' && device !=='desktop'">Appareil : {{ device }}</span>
                 <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="type === 'desktop'">Résolution : {{width}}x{{height}}</span>
                 <span class="badge badge-pill badge-outline-primary p-2 mr-1" *ngIf="fullpage">Hauteur : {{fullpage}}</span>
                 <span class="btn badge badge-pill badge-primary p-2 mr-1" (click)="openModal(templateParamsModal)">Editer</span>
@@ -49,8 +49,23 @@
     </button>
   </div>
   <div class="modal-body">
-    This is nested modal.<br>
-
+    <h5>Qu’est-ce qu’une URL : <strong>les différents composants</strong></h5>
+    <span>Une URL est composée de plusieurs éléments :</span>
+      <ul>
+      <li><strong>Le protocole :</strong> le plus souvent ceest un "http://", mais ça peut être "https://" ou "ftp://".
+        http signifie <strong>HyperText Transfer Protocol</strong>.
+        Le protocole indique la manière dont vous voulez accéder au serveur sur lequel est hébergée la page que vous recherchez.
+        Notez que https indique une connexion sécurisée et ftp sert au transfert de fichiers.</li>
+        <li><strong>Le sous domaine :</strong> Le plus utilisé est "www". A noter que certains sites peuvents êtres accessibles sans sous-domaine </li>
+      <li><strong>Le nom de domaine :</strong> "recette-pateacrepe.fr" par exemple. C'est l'adresse du site ou se trouve la page. </li>
+      <li><strong>Le dossier :</strong> /post par exemple pour l'URL d'un article de blog. Le dossier n’est pas toujours présent dans une URL.
+        Il permet d'accéder au répertoire dans lequel est classé votre page sur le serveur. C'est comme un dossier d'ordinateur.
+        Vous verrez parfois des sous-répertoires et sous-sous-répertoires dans les URLs.</li>
+      <li><strong>La page :</strong> /qu-est-ce-qu-une-url par exemple. Il s'agit du nom du fichier de la page sur le serveur.</li>
+  </ul>
+  <hr>
+  <p>Pour que cet outil fonctionne correctement, l'url que vous demandez doit contenir à minima le <strong>protocole</strong>, le <strong>sous-domaine</strong> et le <strong>nom de domaine</strong>.<br> <span style="text-decoration: underline">Exemple :</span></p>
+  <pre>https://www.recette-pateacrepe.fr</pre>
   </div>
   <div class="modal-footer">
     <button *ngIf="modalRef" type="button" class="btn btn-secondary" (click)="closeModal()">Fermer</button>

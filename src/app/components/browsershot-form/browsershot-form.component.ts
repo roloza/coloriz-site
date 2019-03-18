@@ -14,18 +14,19 @@ export class BrowsershotFormComponent implements OnInit {
 
   type: String = 'desktop';
   device: String = 'desktop';
-  width: String = '1366';
-  height: String = '768';
+  width: String = '1920';
+  height: String = '1080';
   fullpage: String = 'Ligne de flottaison';
+  fullpageBool = false;
 
   browsershotForm = this.fb.group({
     url: ['', Validators.required]
   });
   paramsForm = this.fb.group({
-    type: ['desktop', Validators.required],
+    type: [this.type, Validators.required],
     device: ['Iphone X', Validators.required],
-    width: ['1366', Validators.required],
-    height: ['768', Validators.required],
+    width: [this.width, Validators.required],
+    height: [this.height, Validators.required],
     fullpage: ['0', Validators.required]
   });
   showLoader = false;
@@ -52,7 +53,7 @@ export class BrowsershotFormComponent implements OnInit {
       this.device,
       this.width,
       this.height,
-      this.fullpage
+      this.fullpageBool
     ]).subscribe(
       data => {
         this.showLoader = false;
@@ -83,6 +84,7 @@ export class BrowsershotFormComponent implements OnInit {
     this.device = this.paramsForm.value['device'] ;
     this.width = this.paramsForm.value['width'] ;
     this.height = this.paramsForm.value['height'] ;
+    this.fullpageBool = this.paramsForm.value['fullpage']
     this.fullpage = this.paramsForm.value['fullpage'] === '1' ? 'Toute la page web' : 'Ligne de flottaison' ;
     this.closeModal();
   }

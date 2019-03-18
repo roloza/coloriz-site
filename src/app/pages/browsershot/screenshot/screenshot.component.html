@@ -1,15 +1,16 @@
 <div class="breadcrumb">
     <h1>Aperçu du site</h1>
+    <ul>
+      <li><a routerLink="/browsershot">Retour</a></li>
+    </ul>
 </div>
 <div class="separator-breadcrumb border-top"></div>
-
-<button class="btn btn-primary">Retour</button>
 
 <div class="card mb-4" *ngIf="img">
   <div class="card-body">
     <div class="row">
       <div class="col-sm-12">
-        <div class="img-container o-hidden browser">
+        <div class="img-container o-hidden browser" *ngIf="imgWidth" [ngStyle]="{maxWidth:imgWidth + 'px'}" style="margin: auto">
           <div class="browser-mockup with-url">
             <img class="img-fluid" src="{{ img }}">
           </div>
