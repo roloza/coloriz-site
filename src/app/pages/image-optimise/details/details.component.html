@@ -1,0 +1,15 @@
+<div class="breadcrumb">
+    <h1>Résultat de la compression<span *ngIf="item"> "{{ item.originalName }}"</span></h1>
+  </div>
+  <div class="separator-breadcrumb border-top"></div>
+
+<div *ngIf="item">
+  <div>
+    <ul>
+      <li>Poids gagné : {{ item.gain }}</li>
+      <li>Gain : {{ item.gainPct }}%</li>
+    </ul>
+  </div>
+  <img [src]="item.fileCompress.url">
+  <img [src]="item.file.url">
+</div>

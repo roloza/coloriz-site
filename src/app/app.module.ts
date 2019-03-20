@@ -35,6 +35,8 @@ import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.co
 import { HomeListPagesComponent } from './components/widgets/home-list-pages/home-list-pages.component';
 import { BrowsershotFormComponent } from './components/browsershot-form/browsershot-form.component';
 import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
+import { ImageOptimiseUploadFormComponent } from './components/image-optimise/image-optimise-upload-form/image-optimise-upload-form.component';
+import { DetailsComponent } from './pages/image-optimise/details/details.component';
 
 
 
@@ -61,7 +63,9 @@ import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.c
     ImageOptimiseComponent,
     HomeListPagesComponent,
     BrowsershotFormComponent,
-    ScreenshotComponent
+    ScreenshotComponent,
+    ImageOptimiseUploadFormComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

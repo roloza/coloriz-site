@@ -1,0 +1,11 @@
+<div class="row mb-4">
+  <div class="col-md-12 mb-4">
+      <div class="card text-left">
+          <div class="card-body">
+            <div class="card-title">Images à compresser</div>
+            <dropzone class="mb-2" [config]="config" [message]="'Cliquez ou déplacez une image ici - taille max: 10Mb'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+          </div>
+      </div>
+
+  </div>
+</div>
