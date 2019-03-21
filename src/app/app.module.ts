@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ApiService } from './services/api.service';
 
 import { ThousandSuffixesPipe } from './pipes/thousand-suffixes-pipe';
+import { FileSizePipe } from './pipes/filesize-pipe';
 import { HeaderComponent } from './components/template/header/header.component';
 import { SidebarComponent } from './components/template/sidebar/sidebar.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -65,7 +66,8 @@ import { DetailsComponent } from './pages/image-optimise/details/details.compone
     BrowsershotFormComponent,
     ScreenshotComponent,
     ImageOptimiseUploadFormComponent,
-    DetailsComponent
+    DetailsComponent,
+    FileSizePipe,
   ],
   imports: [
     BrowserModule,

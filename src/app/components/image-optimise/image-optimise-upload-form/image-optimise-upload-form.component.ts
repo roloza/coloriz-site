@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DropzoneComponent, DropzoneDirective, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-image-optimise-upload-form',
@@ -26,6 +27,7 @@ export class ImageOptimiseUploadFormComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -41,7 +43,7 @@ export class ImageOptimiseUploadFormComponent implements OnInit {
   }
 
   public onUploadError(args: any): void {
-    console.error('onUploadError:', args);
+    this.toastr.error(args[1], 'Oops!');
   }
 
   public onUploadSuccess(args: any): void {

@@ -1,0 +1,43 @@
+.compression-description {
+  background: #DDD;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.separator-r {
+  border-right: none;
+}
+
+.number {
+  font-weight: bold;
+  font-size: 2em;
+}
+.btn-custom-left {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-custom-right {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-resize input {
+  width: 70px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.form-resize .label {
+  line-height: 35px;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .separator-r {
+    border-right: 2px solid #FFF;
+  }
+}

@@ -26,7 +26,10 @@
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              { "input": "src/assets/js/beerslider.js", "bundleName": "BeerSlider" }
+
+            ]
           },
           "configurations": {
             "production": {

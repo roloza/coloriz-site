@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageCompress } from '../../../models/imageCompress';
 
 @Component({
   selector: 'app-details',
@@ -8,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class DetailsComponent implements OnInit {
 
   constructor() { }
-  item: any[] = [];
+  item: ImageCompress;
   ngOnInit() {
-
     const items = JSON.parse(localStorage.getItem('compress-image'));
     if (items) {
       this.item = items[0];
+      new BeerSlider( document.getElementById( 'slider' ) );
+
     }
   }
 
