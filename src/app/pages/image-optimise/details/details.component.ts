@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageCompress } from '../../../models/imageCompress';
+import { ImageSlider } from '../../../customLib/image-slider';
 
 @Component({
   selector: 'app-details',
@@ -8,15 +9,23 @@ import { ImageCompress } from '../../../models/imageCompress';
 })
 export class DetailsComponent implements OnInit {
 
+
+  element: HTMLElement;
+  prefix: String = 'beer';
+  revealElement: any;
+  revealContainer: any;
+  range: any;
+  handle: any;
+
   constructor() { }
   item: ImageCompress;
   ngOnInit() {
     const items = JSON.parse(localStorage.getItem('compress-image'));
     if (items) {
       this.item = items[0];
-      new BeerSlider( document.getElementById( 'slider' ) );
+// tslint:disable-next-line: no-unused-expression
+      new ImageSlider('slider', 50);
 
     }
   }
-
 }
