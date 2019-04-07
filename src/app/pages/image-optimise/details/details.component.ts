@@ -1,31 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageCompress } from '../../../models/imageCompress';
 import { ImageSlider } from '../../../customLib/image-slider';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
+
+
+
 export class DetailsComponent implements OnInit {
+  showLoader: boolean;
+  id: string;
+  result: ImageCompress;
+  private sub;
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService
+  ) { }
 
-  element: HTMLElement;
-  prefix: String = 'beer';
-  revealElement: any;
-  revealContainer: any;
-  range: any;
-  handle: any;
-
-  constructor() { }
-  item: ImageCompress;
   ngOnInit() {
-    const items = JSON.parse(localStorage.getItem('compress-image'));
-    if (items) {
-      this.item = items[0];
-// tslint:disable-next-line: no-unused-expression
-      new ImageSlider('slider', 50);
-
-    }
+    this.showLoader = true;
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        this.id = params['id'] || '';
+        if (this.id === '') {
+            this.router.navigate(['image-compression']);
+        }
+        this.apiService.showCompressor(this.id).subscribe(
+          data => {
+            this.showLoader = false;
+            if (data.state === 'error') {
+              this.router.navigate(['image-compression']);
+            } else {
+              const slider = new ImageSlider('slider', 50);
+              this.result = data.results;
+            }
+          }
+        )
+      });
   }
 }

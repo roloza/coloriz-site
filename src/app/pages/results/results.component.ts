@@ -24,18 +24,17 @@ export class ResultsComponent implements OnInit {
     this.sub = this.route
       .queryParams
       .subscribe(params => {
-        this.query = params['query'] || "";
-        if (this.query != "") {
+        this.query = params['query'] || '';
+        if (this.query !== '') {
           this.images = null;
           this.showLoader = true;
           this.apiService.getImages(this.query).subscribe(
             data => {
-              this.images = data
-
-              if (this.images.results.length == 0) {
+              this.images = data;
+              if (this.images.results.length === 0) {
                 this.apiService.postImages(this.query).subscribe(
                   data => {
-                    this.images = data
+                    this.images = data;
                     this.showLoader = false;
                   });
 
@@ -45,7 +44,7 @@ export class ResultsComponent implements OnInit {
             }
           )
         } else {
-          this.router.navigate(["/"]);
+          this.router.navigate(['/']);
         }
       });
   }

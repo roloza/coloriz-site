@@ -17,7 +17,7 @@ export class ImagesResultsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (this.color == null) {
+    if (this.color === null) {
       this.apiService.postColor(this.name).subscribe(
         data => {
           this.color = data.color;

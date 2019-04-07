@@ -49,14 +49,7 @@ export class ImageOptimiseUploadFormComponent implements OnInit {
   public onUploadSuccess(args: any): void {
     if (args.length >= 2) {
       if (args[1].state === 'success') {
-        this.storedCompressItems.push(args[1].results);
-
-        // tri les éléments du plus récent au plus ancien
-        this.storedCompressItems.sort(function (a, b) {
-          return b.ts - a.ts;
-        });
-        localStorage.setItem('compress-image', JSON.stringify(this.storedCompressItems));
-        this.router.navigate(['image-compression/details']);
+        this.router.navigate(['image-compression/details'], { queryParams: { id: args[1].results.id } });
       }
     }
   }

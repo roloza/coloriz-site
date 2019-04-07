@@ -44,6 +44,14 @@ export class ApiService {
     return this.httpClient.post(this.url + 'browsershot', httpParams);
   }
 
+  showBrowsershot(id: string): Observable<any> {
+    return this.httpClient.get(this.url + 'browsershot/' + id);
+  }
+
+  showCompressor(id: string): Observable<any> {
+    return this.httpClient.get(this.url + 'compress/' + id);
+  }
+
   uploadRequest(files: Array<File>) {
     return new Promise((resolve, reject) => {
       const formData: any = new FormData();

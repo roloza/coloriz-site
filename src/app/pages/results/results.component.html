@@ -5,10 +5,10 @@
 
 <div class="row" *ngIf="images" >
   <app-images-results class="col-xl-3 col-lg-4 col-md-6 mb-4" *ngFor="let image of images.results"
-    [name]="image.img_name"
-    [path]="images.slug"
-    [color]="image.color"
-    [palette]="image.palette">
+    [name]='image.name'
+    [path]='image.path'
+    [color]='image.color'
+    [palette]='image.palette'>
   </app-images-results>
 </div>
 

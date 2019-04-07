@@ -39,11 +39,9 @@ export class UploadFormComponent {
 
   public onUploadSuccess(args: any): void {
     this.images.push({
-      url:  'http://51.15.210.203' + args[1].filepath,
+      url:   args[1].filepath,
       color: args[1].color,
       palette: args[1].palette
     });
-    console.log(this.images);
   }
-
 }

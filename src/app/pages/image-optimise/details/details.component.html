@@ -1,55 +1,82 @@
 <div class="breadcrumb">
-  <h1>Résultat de la compression<span > "{{ item.originalName }}"</span></h1>
+  <h1>Résultat de la compression<span > "{{ result.datas.original_name }}"</span></h1>
 </div>
 <div class="separator-breadcrumb border-top"></div>
 
 <div class="row">
-    <div class="col-xl-6 mb-4">
-        <div class="card text-left">
-            <div class="card-body">
-              <h4 class="card-title mb-3">Comparez votre image avec la version compressée</h4>
-              <div id="slider" class="beer-slider" data-beer-label="Originale">
-                <img [src]="item.fileCompress.url">
-                <div class="beer-reveal" data-beer-label="Compressée">
-                    <img [src]="item.file.url">
-                </div>
+  <div class="col-xl-6 mb-4">
+      <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title mb-3">Comparez votre image avec la version compressée</h4>
+            <div id="slider" class="beer-slider" data-beer-label="Originale">
+              <img [src]="result.file.url">
+              <div class="beer-reveal" data-beer-label="Compressée">
+                  <img [src]="result.fileCompress.url">
               </div>
             </div>
-        </div>
-    </div>
-    <div class="col-xl-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <div class="compression-description">
-                <div class="row">
-                    <div class="col-md-5 separator-r">
-                      <h5>Avant</h5>
-                        <span class="number">{{ item.file.size | filesize }}</span>
-                    </div>
-                    <div class="col-md-5 separator-r">
-                        <h5>Après</h5>
-                        <span class="number">{{ item.fileCompress.size | filesize }}</span>
-                    </div>
-                    <div class="col-md-2">
-                        <h5>Gain</h5>
-                        <span class="number">{{ item.gainPct }}%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-9" style="padding-right:0;">
-                    <button type="button" class="btn btn-lg btn-primary btn-block btn-custom-left"><i class="i-Download1"></i> Télécharger</button>
-                </div>
-                <div class="col-3" style="padding-left:0;">
-                    <a routerLink="/image-compression" class="btn btn-lg btn-outline-secondary btn-block btn-custom-right"><i class="i-Back1"></i> Retour</a>
-                </div>
-            </div>
-
-            <hr>
-            <h5 class="mb-4">Redimenssionner cette image</h5>
-
           </div>
-        </div>
+      </div>
+  </div>
+  <div class="col-xl-6 mb-4">
+
+    <div class="col-12 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="compression-description">
+              <div class="row">
+                  <div class="col-md-5 separator-r">
+                    <h5>Avant</h5>
+                      <span class="number">{{ result.file.size | filesize }}</span>
+                  </div>
+                  <div class="col-md-5 separator-r">
+                      <h5>Après</h5>
+                      <span class="number">{{ result.fileCompress.size | filesize }}</span>
+                  </div>
+                  <div class="col-md-2">
+                      <h5>Gain</h5>
+                      <span class="number">{{ result.datas.gain_pct }}%</span>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-9" style="padding-right:0;">
+                  <button type="button" class="btn btn-lg btn-primary btn-block btn-custom-left"><i class="i-Download1"></i> Télécharger</button>
+              </div>
+              <div class="col-3" style="padding-left:0;">
+                  <a routerLink="/image-compression" class="btn btn-lg btn-outline-secondary btn-block btn-custom-right"><i class="i-Back1"></i> Retour</a>
+              </div>
+          </div>
+      </div>
     </div>
+  </div>
+
+  <div class="col-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-3">Redimensionner cette image</h4>
+        <form action="" class="form-resize">
+          <div class="row">
+            <div class="col-3 label">Résolution</div>
+            <div class="col-auto">
+              <input class="form-control" type="text" value="1366" formControlName="width"> X <input class="form-control" type="text" value="768">
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-primary"><i class="i-Gear"></i> Générer</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-3">Analyser les couleurs</h4>
+          <button class="btn btn-primary"><i class="i-Gear"></i> Lancer</button>
+        </div>
+      </div>
+    </div>
+
 </div>
 

@@ -60,7 +60,7 @@ export class BrowsershotFormComponent implements OnInit {
         if (data.state === 'error') {
           this.toastr.error(data.message, 'Oops!');
         } else {
-          this.router.navigate(['browsershot/screenshot'], { queryParams: { img: data.img } });
+          this.router.navigate(['browsershot/screenshot'], { queryParams: { id: data.results.id } });
         }
       }
     )
