@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-image-optimise-upload-form',
-  templateUrl: './image-optimise-upload-form.component.html',
-  styleUrls: ['./image-optimise-upload-form.component.scss']
+  selector: 'app-optimise-upload-form',
+  templateUrl: './optimise-upload-form.component.html',
+  styleUrls: ['./optimise-upload-form.component.scss']
 })
-export class ImageOptimiseUploadFormComponent implements OnInit {
+export class OptimiseUploadFormComponent implements OnInit {
 
   public config: DropzoneConfigInterface = {
     clickable: true,
