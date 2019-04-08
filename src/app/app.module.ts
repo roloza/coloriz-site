@@ -25,19 +25,19 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
 import { NgxUploaderModule } from 'ngx-uploader';
 import { DropzoneModule, DropzoneConfigInterface, DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { AnalyseImageComponent } from './pages/analyse-image/analyse-image.component';
-import { WidgetLastQueriesComponent } from './components/widgets/widget-last-queries/widget-last-queries.component';
-import { WidgetMostQueriesComponent } from './components/widgets/widget-most-queries/widget-most-queries.component';
-import { WidgetKeywordsCategoriesComponent } from './components/widgets/widget-keywords-categories/widget-keywords-categories.component';
 import { WidgetBestColorsComponent } from './components/widgets/widget-best-colors/widget-best-colors.component';
-import { WidgetQueryFormComponent } from './components/widgets/widget-query-form/widget-query-form.component';
 import { ColorizComponent } from './pages/coloriz/coloriz.component';
 import { BrowsershotComponent } from './pages/browsershot/browsershot.component';
 import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
-import { HomeListPagesComponent } from './components/widgets/home-list-pages/home-list-pages.component';
+import { HomeListPagesComponent } from './components/widgets-page/home/home-list-pages/home-list-pages.component';
 import { BrowsershotFormComponent } from './components/browsershot-form/browsershot-form.component';
 import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
 import { ImageOptimiseUploadFormComponent } from './components/image-optimise/image-optimise-upload-form/image-optimise-upload-form.component';
 import { DetailsComponent } from './pages/image-optimise/details/details.component';
+import { ColorizQueryFormComponent } from './components/widgets-page/coloriz/coloriz-query-form/coloriz-query-form.component';
+import { ColorizLastQueriesComponent } from './components/widgets-page/coloriz/coloriz-last-queries/coloriz-last-queries.component';
+import { ColorizBestQueriesComponent } from './components/widgets-page/coloriz/coloriz-best-queries/coloriz-best-queries.component';
+import { ColorizKeywordsCategoriesComponent } from './components/widgets-page/coloriz/coloriz-keywords-categories/coloriz-keywords-categories.component';
 
 
 
@@ -54,11 +54,7 @@ import { DetailsComponent } from './pages/image-optimise/details/details.compone
     ResultsComponent,
     UploadFormComponent,
     AnalyseImageComponent,
-    WidgetLastQueriesComponent,
-    WidgetMostQueriesComponent,
-    WidgetKeywordsCategoriesComponent,
     WidgetBestColorsComponent,
-    WidgetQueryFormComponent,
     ColorizComponent,
     BrowsershotComponent,
     ImageOptimiseComponent,
@@ -68,6 +64,10 @@ import { DetailsComponent } from './pages/image-optimise/details/details.compone
     ImageOptimiseUploadFormComponent,
     DetailsComponent,
     FileSizePipe,
+    ColorizQueryFormComponent,
+    ColorizLastQueriesComponent,
+    ColorizBestQueriesComponent,
+    ColorizKeywordsCategoriesComponent,
   ],
   imports: [
     BrowserModule,

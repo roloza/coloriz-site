@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
-  selector: 'app-widget-most-queries',
-  templateUrl: './widget-most-queries.component.html',
-  styleUrls: ['./widget-most-queries.component.scss']
+  selector: 'app-coloriz-best-queries',
+  templateUrl: './coloriz-best-queries.component.html',
+  styleUrls: ['./coloriz-best-queries.component.scss']
 })
-export class WidgetMostQueriesComponent implements OnInit {
+export class ColorizBestQueriesComponent implements OnInit {
+
   queries: any[];
 
   constructor(

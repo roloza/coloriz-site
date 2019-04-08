@@ -1,0 +1,19 @@
+<div class="row row-eq-height">
+  <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let page of pages">
+      <div class="card card-profile-1 mb-4">
+          <div class="card-body text-center">
+              <div class="avatar box-shadow-2 mb-3">
+                  <i [ngClass]="page.icon"></i>
+              </div>
+              <h5 class="card-title m-0">{{ page.title }}</h5>
+              <p class="mt-0 text-muted">
+                <i class="i-Letter-Close"></i>
+              </p>
+              <p>{{ page.description }}</p>
+              <div class="btn-container">
+                  <button class="btn btn-primary btn-rounded" [routerLink]="page.link">Voir <i class="i-Left-To-Right"></i></button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

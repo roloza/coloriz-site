@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
-  selector: 'app-widget-last-queries',
-  templateUrl: './widget-last-queries.component.html',
-  styleUrls: ['./widget-last-queries.component.scss']
+  selector: 'app-coloriz-last-queries',
+  templateUrl: './coloriz-last-queries.component.html',
+  styleUrls: ['./coloriz-last-queries.component.scss']
 })
-export class WidgetLastQueriesComponent implements OnInit {
+export class ColorizLastQueriesComponent implements OnInit {
+
   queries: any[];
 
   constructor(
