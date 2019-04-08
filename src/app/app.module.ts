@@ -21,7 +21,6 @@ import { ImagesResultsComponent } from './components/images-results/images-resul
 import { SearchImageFormComponent } from './components/search-image-form/search-image-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './pages/results/results.component';
-import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { NgxUploaderModule } from 'ngx-uploader';
 import { DropzoneModule, DropzoneConfigInterface, DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { AnalyseImageComponent } from './pages/analyse-image/analyse-image.component';
@@ -30,7 +29,7 @@ import { ColorizComponent } from './pages/coloriz/coloriz.component';
 import { BrowsershotComponent } from './pages/browsershot/browsershot.component';
 import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
 import { HomeListPagesComponent } from './components/widgets-page/home/home-list-pages/home-list-pages.component';
-import { BrowsershotFormComponent } from './components/browsershot-form/browsershot-form.component';
+import { BrowsershotFormComponent } from './components/widgets-page/browsershot/browsershot-form/browsershot-form.component';
 import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
 import { ImageOptimiseUploadFormComponent } from './components/image-optimise/image-optimise-upload-form/image-optimise-upload-form.component';
 import { DetailsComponent } from './pages/image-optimise/details/details.component';
@@ -38,8 +37,7 @@ import { ColorizQueryFormComponent } from './components/widgets-page/coloriz/col
 import { ColorizLastQueriesComponent } from './components/widgets-page/coloriz/coloriz-last-queries/coloriz-last-queries.component';
 import { ColorizBestQueriesComponent } from './components/widgets-page/coloriz/coloriz-best-queries/coloriz-best-queries.component';
 import { ColorizKeywordsCategoriesComponent } from './components/widgets-page/coloriz/coloriz-keywords-categories/coloriz-keywords-categories.component';
-
-
+import { AnalyseImageUploadFormComponent } from './components/widgets-page/analyse-image/analyse-image-upload-form/analyse-image-upload-form.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +50,6 @@ import { ColorizKeywordsCategoriesComponent } from './components/widgets-page/co
     ImagesResultsComponent,
     SearchImageFormComponent,
     ResultsComponent,
-    UploadFormComponent,
     AnalyseImageComponent,
     WidgetBestColorsComponent,
     ColorizComponent,
@@ -68,6 +65,7 @@ import { ColorizKeywordsCategoriesComponent } from './components/widgets-page/co
     ColorizLastQueriesComponent,
     ColorizBestQueriesComponent,
     ColorizKeywordsCategoriesComponent,
+    AnalyseImageUploadFormComponent,
   ],
   imports: [
     BrowserModule,

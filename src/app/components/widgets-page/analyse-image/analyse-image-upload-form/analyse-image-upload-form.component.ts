@@ -1,14 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { DropzoneComponent, DropzoneDirective, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
-import { ImagePalette } from '../../models/ImagePalette';
+import { ImagePalette } from '../../../../models/ImagePalette';
 
 @Component({
-  selector: 'app-upload-form',
-  templateUrl: './upload-form.component.html',
-  styleUrls: ['./upload-form.component.scss']
+  selector: 'app-analyse-image-upload-form',
+  templateUrl: './analyse-image-upload-form.component.html',
+  styleUrls: ['./analyse-image-upload-form.component.scss']
 })
-export class UploadFormComponent {
-
+export class AnalyseImageUploadFormComponent {
   public config: DropzoneConfigInterface = {
     clickable: true,
     maxFiles: 50,
@@ -44,4 +43,5 @@ export class UploadFormComponent {
       palette: args[1].palette
     });
   }
+
 }

@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-browsershot-form',
@@ -92,4 +92,5 @@ export class BrowsershotFormComponent implements OnInit {
   handleChange(event) {
     this.type = event.target.value ;
   }
+
 }
