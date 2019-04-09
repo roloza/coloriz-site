@@ -1,0 +1,21 @@
+<div class="card mb-4">
+  <div class="card-body">
+      <h5 class="card-title">Vos dernières captures d'écran</h5>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let userScreenshot of userScreenshots">
+            <a [routerLink]="['screenshot']" [queryParams]="{'id': userScreenshot.id}">
+              <div class="card text-white o-hidden mb-3" style="max-height: 353px; overflow: hidden;">
+                  <img style="width:529; vertical-align: top;" class="card-img" [src]="userScreenshot.imageUrl" alt="">
+                  <div class="card-img-overlay">
+                      <div class="p-1 text-left card-footer font-weight-light d-flex">
+                          <span class="mr-3 d-flex align-items-center"><i class="i-Speach-Bubble-6 mr-1"></i>
+                              <a target="_blank" style="color: #FFF" href="{{ userScreenshot.url }}">{{ userScreenshot.url }}</a> </span>
+                      </div>
+                  </div>
+              </div>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+//529x353

@@ -6,16 +6,4 @@
 </div>
 <div class="separator-breadcrumb border-top"></div>
 
-<div class="card mb-4" *ngIf="img">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="img-container o-hidden browser" *ngIf="imgWidth" [ngStyle]="{maxWidth:imgWidth + 'px'}" style="margin: auto">
-          <div class="browser-mockup with-url">
-            <img class="img-fluid" src="{{ img }}">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-screenshot-show></app-screenshot-show>

@@ -38,6 +38,8 @@ import { ColorizBestQueriesComponent } from './components/widgets-page/coloriz/c
 import { ColorizKeywordsCategoriesComponent } from './components/widgets-page/coloriz/coloriz-keywords-categories/coloriz-keywords-categories.component';
 import { AnalyseImageUploadFormComponent } from './components/widgets-page/analyse-image/analyse-image-upload-form/analyse-image-upload-form.component';
 import { OptimiseUploadFormComponent } from './components/widgets-page/image-optimise/optimise-upload-form/optimise-upload-form.component';
+import { BrowsershotUserScreenshotsComponent } from './components/widgets-page/browsershot/browsershot-user-screenshots/browsershot-user-screenshots.component';
+import { ScreenshotShowComponent } from './components/widgets-page/browsershot/screenshot/screenshot-show/screenshot-show.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { OptimiseUploadFormComponent } from './components/widgets-page/image-opt
     ColorizKeywordsCategoriesComponent,
     AnalyseImageUploadFormComponent,
     OptimiseUploadFormComponent,
+    BrowsershotUserScreenshotsComponent,
+    ScreenshotShowComponent,
   ],
   imports: [
     BrowserModule,
