@@ -30,4 +30,19 @@ export class LocalStorageService {
     }
     localStorage.setItem(key, JSON.stringify(storageElts));
   }
+
+  public deleteItem(id: string, key: string) {
+    const elts = this.getItems(key);
+    console.log(elts);
+    const index = elts.indexOf(id);
+    if (index !== -1) {
+      elts.splice(index, 1);
+    }
+    localStorage.removeItem(key);
+    localStorage.setItem(key, JSON.stringify(elts));
+
+    return  this.getItems(key);
+  }
+
+
 }

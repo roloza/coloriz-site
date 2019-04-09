@@ -27,6 +27,10 @@ export class ApiService {
     return this.httpClient.post(this.url + 'images', httpParams);
   }
 
+  getImage(id: string): Observable<any> {
+    return this.httpClient.get(this.url + 'image/' + id);
+  }
+
   postColor(img: string): Observable<any> {
     const httpParams = new HttpParams().append('img', img);
     return this.httpClient.post(this.url + 'colors', httpParams);

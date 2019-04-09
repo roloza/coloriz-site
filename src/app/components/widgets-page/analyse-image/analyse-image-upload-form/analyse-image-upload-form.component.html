@@ -34,4 +34,40 @@
   </div>
 </div>
 
+<div class="row mb-4" *ngIf="imageHistorique.length > 0">
+  <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+        <h3 class="mb-0">Vos dernières analyses</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-4" *ngIf="imageHistorique.length > 0">
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4 image-hist-card" *ngFor="let image of imageHistorique">
+        <div class="overlay-actions">
+            <button class="btn btn-danger btn-rounded" (click)="delete(image.id)"><i class="i-Remove"></i></button>
+            <button class="btn btn-primary btn-rounded"><i class="i-Remove"></i></button>
+        </div>
+      <div class="card text-left">
+        <div class="card-body card-palette">
+          <div class="background"></div>
+          <div class="palette-img-container">
+            <img [src]="image.url">
+          </div>
+          <div class="content">
+            <h4>Couleur dominante</h4>
+            <div class="area mb-4">
+              <div class="color" [ngStyle]="{background: image.color ? image.color : '#FFF'}"></div>
+            </div>
+            <h4>Palette</h4>
+            <div class="area">
+              <div *ngFor="let paletteColor of image.palette" class="color"  [ngStyle]="{background: paletteColor ? paletteColor : '#FFF'}"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 

@@ -1,0 +1,36 @@
+.overlay-actions {
+  position: absolute;
+  z-index: 100000;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  display: none;
+  text-align: center;
+}
+.overlay-actions button {
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+}
+
+.image-hist-card:hover .overlay-actions {
+  display: block;
+}
+
+.background {
+  background: #444;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    opacity: .4;
+    border-radius: 10px;
+    display: none;
+}
+
+.image-hist-card:hover .background {
+  display: block;
+}
