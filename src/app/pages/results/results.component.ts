@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Image } from '../../models/image';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-results',
@@ -17,7 +18,8 @@ export class ResultsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,8 @@ export class ResultsComponent implements OnInit {
       .subscribe(params => {
         this.query = params['query'] || '';
         if (this.query !== '') {
+          this.localStorageService.storeItem(this.query, 'queries', 30);
+
           this.images = null;
           this.showLoader = true;
           this.apiService.getImages(this.query).subscribe(
@@ -52,6 +56,11 @@ export class ResultsComponent implements OnInit {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
+
+
+
+
 
 
 }

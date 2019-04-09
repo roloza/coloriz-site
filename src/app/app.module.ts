@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ApiService } from './services/api.service';
+import { LocalStorageService } from './services/local-storage.service';
 
 import { ThousandSuffixesPipe } from './pipes/thousand-suffixes-pipe';
 import { FileSizePipe } from './pipes/filesize-pipe';
@@ -83,6 +84,7 @@ import { OptimiseUploadFormComponent } from './components/widgets-page/image-opt
   ],
   providers: [
     ApiService,
+    LocalStorageService,
   ],
   bootstrap: [AppComponent]
 })

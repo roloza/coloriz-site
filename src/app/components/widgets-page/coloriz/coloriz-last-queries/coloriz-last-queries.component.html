@@ -1,19 +1,15 @@
 <div class="card mb-3">
   <div class="card-body">
-      <div class="card-title">Les dernières recherches</div>
-      <div class="mb-4" >
-          <div class="d-flex align-items-center border-bottom-dotted-dim pb-3 mb-3" *ngFor="let query of queries">
-              <div class="avatar-md rounded mr-3" [ngStyle]="{background: query.color ? query.color : '#DDD'}"></div>
-              <div class="flex-grow-1">
-                  <h6 class="m-0">{{ query.query }}</h6>
-              </div>
-              <div>
-                  <button class="btn btn-outline-primary btn-rounded btn-sm" [routerLink]="['/results']" [queryParams]="{query:query.query}">Voir</button>
-              </div>
-          </div>
-      </div>
-      <div class="btn-container text-center">
-          <button class="btn btn-primary btn-rounded">Voir plus <i class="i-Left-To-Right"></i></button>
+      <div class="card-title">Vos dernières recherches</div>
+      <div class="mb-4 badge-middle-container" >
+        <span *ngIf="queries.length > 0">
+          <span *ngFor="let query of queries">
+            <a [ngClass]="query.class" class="badge badge-pill p-2 m-1" [routerLink]="['/results']" [queryParams]="{query:query.kw}">{{ query.kw }}</a>
+          </span>
+        </span>
+        <span *ngIf="queries.length == 0">
+          <p>Vous n'avez pas encore effectué de recherche.</p>
+        </span>
       </div>
   </div>
 </div>
