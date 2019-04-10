@@ -21,6 +21,7 @@ export class ImageCompress {
     size: number;
     type: string;
     url: string;
+    name: string;
   };
   fileCompress: {
     id: number
@@ -34,5 +35,6 @@ export class ImageCompress {
     size: number;
     type: string;
     url: string;
+    name: string;
   };
 }

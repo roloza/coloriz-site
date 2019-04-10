@@ -40,6 +40,8 @@ import { AnalyseImageUploadFormComponent } from './components/widgets-page/analy
 import { OptimiseUploadFormComponent } from './components/widgets-page/image-optimise/optimise-upload-form/optimise-upload-form.component';
 import { BrowsershotUserScreenshotsComponent } from './components/widgets-page/browsershot/browsershot-user-screenshots/browsershot-user-screenshots.component';
 import { ScreenshotShowComponent } from './components/widgets-page/browsershot/screenshot/screenshot-show/screenshot-show.component';
+import { OptimiseUserHitoryComponent } from './components/widgets-page/image-optimise/optimise-user-hitory/optimise-user-hitory.component';
+import { OptimiseBeforeAfterComponent } from './components/widgets-page/image-optimise/details/optimise-before-after/optimise-before-after.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,8 @@ import { ScreenshotShowComponent } from './components/widgets-page/browsershot/s
     OptimiseUploadFormComponent,
     BrowsershotUserScreenshotsComponent,
     ScreenshotShowComponent,
+    OptimiseUserHitoryComponent,
+    OptimiseBeforeAfterComponent,
   ],
   imports: [
     BrowserModule,

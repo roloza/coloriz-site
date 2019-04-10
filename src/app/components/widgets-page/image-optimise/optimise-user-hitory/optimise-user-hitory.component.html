@@ -1,0 +1,22 @@
+<div class="card mb-4"  *ngIf="results">
+  <div class="card-body">
+      <h5 class="card-title">Vos dernières images optimisées</h5>
+      <div class="row" *ngIf="results">
+        <div class="col-md-4" *ngFor="let result of results">
+            <a [routerLink]="['details']" [queryParams]="{'id': result.datas.id}">
+              <div class="card text-white o-hidden mb-3" style="max-height: 353px; overflow: hidden;">
+                  <img style="width:529; vertical-align: top;" class="card-img" [src]="result.fileCompress.url" alt="">
+                  <div class="card-img-overlay">
+                      <div class="p-1 text-left card-footer font-weight-light d-flex">
+                          <span class="mr-3 d-flex align-items-center"><i class="i-Speach-Bubble-6 mr-1"></i>
+                              <span target="_blank" style="color: #FFF">{{ result.datas.original_name }}</span>
+                            </span>
+                      </div>
+                  </div>
+              </div>
+            </a>
+      </div>
+
+    </div>
+  </div>
+</div>
