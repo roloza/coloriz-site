@@ -9,7 +9,6 @@ export class ImageSlider {
 
   constructor(elementName: string, start: Number) {
     this.element = document.getElementById( elementName );
-    console.log(this.element);
     if (!this.element || this.element.children.length !== 2) {
       return;
     }

@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 import { AppComponent } from './app.component';
@@ -90,6 +91,7 @@ import { ColorDetailsComponent } from './pages/color-details/color-details.compo
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
     HighchartsChartModule,
   ],
   exports: [

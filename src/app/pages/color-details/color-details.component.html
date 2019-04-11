@@ -11,15 +11,43 @@
   <div class="col-sm-12 col-md-9">
       <div class="card text-left">
           <div class="card-body">
-            <h4 class="card-title mb-3">Carte des couleurs</h4>
-            <div style=" height: 600px;">
-              <highcharts-chart
-              [Highcharts]="Highcharts"
-              [options]="chartOptions"
+            <tabset [justified]="true" customClass="nav-pills">
+              <tab heading="Carte" id="carte">
+                <h4 class="card-title mb-3">Carte des couleur</h4>
+                <div style=" height: 600px;">
+                  <highcharts-chart
+                  [Highcharts]="Highcharts"
+                  [options]="chartOptions"
 
-              style="width: 100%; height: 100%; display: block;">
-              </highcharts-chart>
-            </div>
+                  style="width: 100%; height: 100%; display: block;">
+                  </highcharts-chart>
+
+                </div>
+              </tab>
+              <tab heading="Listing" id="listing">
+              <h4 class="card-title mb-3">Liste des couleurs</h4>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Couleur</th>
+                      <th>Code Hexa</th>
+                      <th>Code Rgb</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let color of colors">
+                    <tr>
+                      <td><span class="table-color"  [ngStyle]="{background: color.color ? color.color : '#FFF'}"></span></td>
+                      <td>{{ color.color }}</td>
+                      <td>{{ getRgbColor(color.color) }}</td>
+                      <td>{{ color.value }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </tab>
+            </tabset>
           </div>
       </div>
   </div>
@@ -42,11 +70,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
 </div>
 
 <div class="loader" *ngIf="showLoader">

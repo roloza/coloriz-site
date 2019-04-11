@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ImageCompress } from '../../../../../models/imageCompress';
 import { ImageSlider } from '../../../../../customLib/image-slider';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './optimise-before-after.component.html',
   styleUrls: ['./optimise-before-after.component.scss']
 })
-export class OptimiseBeforeAfterComponent implements OnInit {
+export class OptimiseBeforeAfterComponent implements OnInit, AfterViewChecked {
 
   showLoader = false;
   id: string;
@@ -45,14 +45,19 @@ export class OptimiseBeforeAfterComponent implements OnInit {
               this.router.navigate(['image-compression']);
             } else {
               this.localStorageService.storeItem(this.id, 'compressor', 12);
-              const slider = new ImageSlider('slider', 50);
+
               this.result = data.results;
               this.color = this.result.fileCompress.color;
               this.palette = JSON.parse(this.result.fileCompress.palette);
+
             }
           }
         )
       });
+  }
+
+  ngAfterViewChecked() {
+    const slider = new ImageSlider('slider', 50);
   }
 
   submitExtractColors() {

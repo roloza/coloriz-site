@@ -232,3 +232,9 @@ dropzone > .dropzone.dz-wrapper.dz-single .dz-preview {
 .image-result:hover .overlay-actions {
   display: block;
 }
+
+.nav-tabs .nav-item .nav-link.active {
+  border: none;
+  background: #639;
+  color: #FFF;
+}
