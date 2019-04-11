@@ -5,3 +5,49 @@
 .badge-middle-container .badge {
   font-size: 1.1em;
 }
+
+
+.tag-wrap {
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+.tag {
+  background: #639;
+  font-size: 1.1em;
+  padding: 5px 10px 5px 15px;
+  clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 10px 100%, 0 50%);
+  -webkit-clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 10px 100%, 0 50%);
+  cursor: pointer;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+.tag:hover {
+  color: #FFF;
+  opacity: 0.9;
+}
+.tag::first-letter {
+  text-transform: capitalize;
+}
+
+.tag-primary {
+  background: #639;
+}
+.tag-secondary {
+  background: #52495a;
+}
+.tag-success {
+  background: #4caf50;
+}
+.tag-danger {
+  background: #d22346;
+}
+.tag-info {
+  background: #263db5;
+}
+.tag-dark {
+  background: #47404f;
+}
+.tab-light {
+  background: #bbb;
+  color: #47404f;
+}

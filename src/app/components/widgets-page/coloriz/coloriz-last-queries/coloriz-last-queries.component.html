@@ -1,10 +1,10 @@
 <div class="card mb-3">
   <div class="card-body">
       <div class="card-title">Vos dernières recherches</div>
-      <div class="mb-4 badge-middle-container" >
+      <div class="mb-4" >
         <span *ngIf="queries.length > 0">
-          <span *ngFor="let query of queries">
-            <a [ngClass]="query.class" class="badge badge-pill p-2 m-1" [routerLink]="['/results']" [queryParams]="{query:query.kw}">{{ query.kw }}</a>
+          <span class="tag-wrap" *ngFor="let query of queries">
+            <a [ngClass]="query.class" class="tag" [routerLink]="['/results']" [queryParams]="{query:query.kw}">{{ query.kw }}</a>
           </span>
         </span>
         <span *ngIf="queries.length == 0">

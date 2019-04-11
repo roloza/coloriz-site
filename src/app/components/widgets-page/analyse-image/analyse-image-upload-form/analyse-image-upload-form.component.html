@@ -3,8 +3,7 @@
       <div class="card text-left">
 
           <div class="card-body">
-            <div class="card-title">Images à analyser</div>
-            <p>À l'aide de cet outil, découvrez la palette de couleurs d'une photo que vous aimez. Simplement faire glisser votre photo dans notre outil gratuit et la palette s'affichera.</p>
+            <div class="card-title">À l'aide de cet outil, découvrez la palette de couleurs d'une photo que vous aimez.</div>
             <dropzone class="mb-2" [config]="config" [message]="'Cliquez ou déplacez une image ici - taille max: 10Mb'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
             <div class="btn btn-primary btn-block" (click)='resetDropzoneUploads()'>Réinitialisation</div>
           </div>

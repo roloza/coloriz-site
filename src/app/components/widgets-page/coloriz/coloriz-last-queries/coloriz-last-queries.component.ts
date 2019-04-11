@@ -58,7 +58,7 @@ export class ColorizLastQueriesComponent implements OnInit {
         break;
 
     }
-    return 'badge-outline-' + className;
+    return 'tag-' + className;
   }
 
 }

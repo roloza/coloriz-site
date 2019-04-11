@@ -15,13 +15,13 @@ export class HomeListPagesComponent implements OnInit {
       description: 'Le moteur de recherche qui transforme vos idées en couleurs.'
     },
     {
-      title: 'Créez votre palette de couleurs',
+      title: 'Image analyzor',
       link: 'analyser-image',
       icon: 'i-Pipette',
       description: 'À l\'aide de cet outil, découvrez la palette de couleurs d\'une photo que vous aimez.'
     },
     {
-      title: 'BrowserShot',
+      title: 'ScreenSite',
       link: 'browsershot',
       icon: 'i-Landscape',
       description: 'Faites une capture d\'écran d\'un site web.'
