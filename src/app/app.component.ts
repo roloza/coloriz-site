@@ -11,7 +11,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
 
   @Output() actionMenu = new EventEmitter<void>();
-  menuState = "open";
+  menuState = 'open';
 
   constructor(
     private router: Router
@@ -34,13 +34,13 @@ export class AppComponent {
 }
 
   toggleMenu(){
-    this.menuState = this.menuState == "open" ? "" : "open";
+    this.menuState = this.menuState === 'open' ? '' : 'open';
   }
 
   hideMenuIfMobile() {
     if (window.innerWidth <= 576) {
-      this.menuState = "";
+      this.menuState = '';
     }
   }
-  
+
 }

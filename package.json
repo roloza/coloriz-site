@@ -23,6 +23,8 @@
     "@angular/router": "7.2.12",
     "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
+    "highcharts": "^7.1.1",
+    "highcharts-angular": "^2.4.0",
     "ngx-bootstrap": "^3.2.0",
     "ngx-dropzone-wrapper": "^7.2.1",
     "ngx-toastr": "^10.0.2",

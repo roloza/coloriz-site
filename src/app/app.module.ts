@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -42,6 +44,7 @@ import { BrowsershotUserScreenshotsComponent } from './components/widgets-page/b
 import { ScreenshotShowComponent } from './components/widgets-page/browsershot/screenshot/screenshot-show/screenshot-show.component';
 import { OptimiseUserHitoryComponent } from './components/widgets-page/image-optimise/optimise-user-hitory/optimise-user-hitory.component';
 import { OptimiseBeforeAfterComponent } from './components/widgets-page/image-optimise/details/optimise-before-after/optimise-before-after.component';
+import { ColorDetailsComponent } from './pages/color-details/color-details.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +76,7 @@ import { OptimiseBeforeAfterComponent } from './components/widgets-page/image-op
     ScreenshotShowComponent,
     OptimiseUserHitoryComponent,
     OptimiseBeforeAfterComponent,
+    ColorDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +89,8 @@ import { OptimiseBeforeAfterComponent } from './components/widgets-page/image-op
     BrowserAnimationsModule,
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HighchartsChartModule,
   ],
   exports: [
     ThousandSuffixesPipe

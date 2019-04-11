@@ -45,7 +45,6 @@ export class AnalyseImageUploadFormComponent implements OnInit {
             palette: JSON.parse(data.results.palette),
             color: data.results.color,
             id: data.results.id
-
           })
         }
       )
@@ -68,7 +67,7 @@ export class AnalyseImageUploadFormComponent implements OnInit {
       url:   args[1].filepath,
       color: args[1].color,
       palette: args[1].palette,
-      id: ''
+      id: args[1].image_id,
     });
   }
 

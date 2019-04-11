@@ -10,7 +10,7 @@ import { BrowsershotComponent } from './pages/browsershot/browsershot.component'
 import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.component';
 import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
 import { DetailsComponent } from './pages/image-optimise/details/details.component';
-
+import { ColorDetailsComponent } from './pages/color-details/color-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'browsershot/screenshot', component: ScreenshotComponent },
   { path: 'image-compression', component: ImageOptimiseComponent },
   { path: 'image-compression/details', component: DetailsComponent },
+  { path: 'image-colors-details', component: ColorDetailsComponent },
 ];
 
 @NgModule({

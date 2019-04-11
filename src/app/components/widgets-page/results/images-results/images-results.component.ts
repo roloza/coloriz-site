@@ -12,6 +12,7 @@ export class ImagesResultsComponent implements OnInit {
   @Input() path: string;
   @Input() color: string;
   @Input() palette: any[];
+  @Input() id: string;
   constructor(
     private apiService: ApiService
   ) { }

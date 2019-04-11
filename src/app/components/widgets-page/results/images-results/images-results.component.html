@@ -1,4 +1,7 @@
-<div class="card text-left search-result">
+<div class="overlay-actions">
+    <a [routerLink]="['/image-colors-details']" [queryParams]="{id: id}" class="btn btn-primary btn-rounded"><i class="i-Remove"></i> Détails</a>
+</div>
+<div class="card text-left search-result  image-result">
   <div class="card-body card-palette">
     <div class="palette-img-container" [ngStyle]="{background: color ? color : '#FFF'}">
       <img [src]="path">
