@@ -29,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './pages/results/results.component';
 import { NgxUploaderModule } from 'ngx-uploader';
 import { DropzoneModule, DropzoneConfigInterface, DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { AnalyseImageComponent } from './pages/analyse-image/analyse-image.component';
 import { ColorizComponent } from './pages/coloriz/coloriz.component';
 import { BrowsershotComponent } from './pages/browsershot/browsershot.component';
@@ -96,6 +97,7 @@ import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/key
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     BsDropdownModule.forRoot(),
+    TypeaheadModule.forRoot(),
     TabsModule.forRoot(),
     HighchartsChartModule,
   ],

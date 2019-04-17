@@ -82,6 +82,10 @@ export class ApiService {
     })
   }
 
+  getTags(): Observable<any> {
+    return this.httpClient.get(this.url + 'tags');
+  }
+
   getCategoryTags(id: number): Observable<any> {
     return this.httpClient.get(this.url + 'tags/' + id);
   }
@@ -89,6 +93,8 @@ export class ApiService {
   getCategories(): Observable<any> {
     return this.httpClient.get(this.url + 'categories');
   }
+
+
 }
 
 

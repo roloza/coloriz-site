@@ -1,7 +1,11 @@
 <div class="d-flex align-items-center">
   <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="search-bar">
-        <input formControlName="query" type="text" placeholder="De quelle couleur est...">
+        <input formControlName="query" type="text" placeholder="De quelle couleur est..."
+          [(ngModel)]="customSelected"
+          [typeahead]="tagsAc"
+          typeaheadOptionField="v"
+          [typeaheadMinLength]="2">
         <i class="search-icon text-muted i-Magnifi-Glass1"></i>
     </div>
   </form>
