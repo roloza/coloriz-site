@@ -81,4 +81,14 @@ export class ApiService {
       xhr.send(formData);
     })
   }
+
+  getCategoryTags(id: number): Observable<any> {
+    return this.httpClient.get(this.url + 'tags/' + id);
+  }
+
+  getCategories(): Observable<any> {
+    return this.httpClient.get(this.url + 'categories');
+  }
 }
+
+

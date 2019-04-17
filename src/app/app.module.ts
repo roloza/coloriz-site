@@ -18,6 +18,8 @@ import { LocalStorageService } from './services/local-storage.service';
 
 import { ThousandSuffixesPipe } from './pipes/thousand-suffixes-pipe';
 import { FileSizePipe } from './pipes/filesize-pipe';
+import { FilterPipe } from './pipes/filter-pipe';
+
 import { HeaderComponent } from './components/template/header/header.component';
 import { SidebarComponent } from './components/template/sidebar/sidebar.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -46,12 +48,14 @@ import { ScreenshotShowComponent } from './components/widgets-page/browsershot/s
 import { OptimiseUserHitoryComponent } from './components/widgets-page/image-optimise/optimise-user-hitory/optimise-user-hitory.component';
 import { OptimiseBeforeAfterComponent } from './components/widgets-page/image-optimise/details/optimise-before-after/optimise-before-after.component';
 import { ColorDetailsComponent } from './pages/color-details/color-details.component';
+import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/keywords-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ThousandSuffixesPipe,
+    FilterPipe,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
@@ -78,6 +82,7 @@ import { ColorDetailsComponent } from './pages/color-details/color-details.compo
     OptimiseUserHitoryComponent,
     OptimiseBeforeAfterComponent,
     ColorDetailsComponent,
+    KeywordsCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,8 @@ import { ColorDetailsComponent } from './pages/color-details/color-details.compo
     HighchartsChartModule,
   ],
   exports: [
-    ThousandSuffixesPipe
+    ThousandSuffixesPipe,
+    FilterPipe,
   ],
   providers: [
     ApiService,

@@ -238,3 +238,12 @@ dropzone > .dropzone.dz-wrapper.dz-single .dz-preview {
   background: #639;
   color: #FFF;
 }
+
+.modal-content {
+  border: none;
+  border-radius: 20px;
+}
+.modal-content .modal-body {
+  max-height: 70vh;
+  overflow: auto;
+}

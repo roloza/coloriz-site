@@ -1,31 +1,35 @@
 <div class="card mb-4">
   <div class="card-body">
       <div class="card-title">Catégories</div>
-      <ul class="list-group mb-4">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-              Cras justo odio
-              <span class="badge badge-primary badge-pill">4</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-              Dapibus ac facilisis in
-              <span class="badge badge-info badge-pill">2</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-success badge-pill">1</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-warning badge-pill">1</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-              Morbi leo risus
-              <span class="badge badge-danger badge-pill">1</span>
+      <ul class="list-group mb-4" *ngIf="categories">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let category of categories | slice:0:5; let index = index;">
+            <a [routerLink]="['expressions', category.id]">{{ category.name | titlecase }}</a>
+            <span class="badge badge-primary badge-pill">{{ category.count }}</span>
           </li>
       </ul>
 
       <div class="btn-container text-center">
-          <button class="btn btn-primary btn-rounded">Voir plus <i class="i-Left-To-Right"></i></button>
+          <button class="btn btn-primary btn-rounded"  (click)="openModal(templateCategoriesModal)">Voir plus <i class="i-Left-To-Right"></i></button>
       </div>
   </div>
 </div>
+
+<ng-template #templateCategoriesModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Toutes les catégories</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ul class="list-group mb-4" *ngIf="categories">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let category of categories">
+        <a [routerLink]="['expressions', category.id]" (click)="closeModal()">{{ category.name | titlecase }}</a>
+        <span class="badge badge-primary badge-pill">{{ category.count }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button *ngIf="modalRef" type="button" class="btn btn-secondary" (click)="closeModal()">Fermer</button>
+  </div>
+</ng-template>

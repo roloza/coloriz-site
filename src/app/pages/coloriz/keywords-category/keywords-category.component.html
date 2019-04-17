@@ -1,0 +1,39 @@
+<div class="breadcrumb">
+  <h1>Expressions de la catégorie <span *ngIf="categoryName">"{{ categoryName }}"</span></h1>
+</div>
+<div class="separator-breadcrumb border-top"></div>
+
+<div class="row">
+  <div class="col-md-9">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                <input type="text" class="form-control" name="searchString" placeholder="Filtrer sur {{ categoryName }}" [(ngModel)]="searchString">
+            </div>
+          </div>
+    </div>
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          <span class="tag-wrap" *ngFor="let tag of tags | filter : 'name' : searchString">
+            <a *ngIf="categoryName" class="tag tag-light" [routerLink]="['/results']" [queryParams]="{query: categoryName + ' ' + tag.name }">{{ tag.name }}</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card mb-4">
+      <div class="card-body">
+          <div class="card-title">Catégories</div>
+          <ul class="list-group mb-4" *ngIf="categories">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let category of categories">
+                <a [routerLink]="['/coloriz/expressions', category.id]">{{ category.name | titlecase }}</a>
+                <span class="badge badge-primary badge-pill">{{ category.count }}</span>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,10 +4,12 @@
       <div class="card text-left">
           <div class="card-body">
             <h4 class="card-title mb-3">Comparez votre image avec la version compressée</h4>
-            <div id="slider" class="beer-slider" data-beer-label="Originale">
-              <img [src]="result.file.url">
-              <div class="beer-reveal" data-beer-label="Compressée">
-                  <img [src]="result.fileCompress.url">
+            <div style="text-align: center">
+              <div id="slider" class="beer-slider" data-beer-label="Originale">
+                <img [src]="result.file.url">
+                <div class="beer-reveal" data-beer-label="Compressée">
+                    <img [src]="result.fileCompress.url">
+                </div>
               </div>
             </div>
           </div>

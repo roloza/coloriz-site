@@ -11,12 +11,24 @@ import { ImageOptimiseComponent } from './pages/image-optimise/image-optimise.co
 import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.component';
 import { DetailsComponent } from './pages/image-optimise/details/details.component';
 import { ColorDetailsComponent } from './pages/color-details/color-details.component';
+import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/keywords-category.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'results', component: ResultsComponent },
   { path: 'analyser-image', component: AnalyseImageComponent },
-  { path: 'coloriz', component: ColorizComponent },
+  { path: 'coloriz',
+    children: [
+      {
+        path: '',
+        component: ColorizComponent,
+       }, {
+        path: 'expressions/:id',
+        component: KeywordsCategoryComponent
+      }
+    ]
+  },
   { path: 'browsershot', component: BrowsershotComponent },
   { path: 'browsershot/screenshot', component: ScreenshotComponent },
   { path: 'image-compression', component: ImageOptimiseComponent },

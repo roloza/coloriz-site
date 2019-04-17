@@ -3,8 +3,8 @@
       <div class="card-title">Vos dernières recherches</div>
       <div class="mb-4" >
         <span *ngIf="queries.length > 0">
-          <span class="tag-wrap" *ngFor="let query of queries">
-            <a [ngClass]="query.class" class="tag" [routerLink]="['/results']" [queryParams]="{query:query.kw}">{{ query.kw }}</a>
+          <span class="tag-wrap" *ngFor="let query of queries | slice:0:30;">
+            <a class="tag tag-primary" [routerLink]="['/results']" [queryParams]="{query:query.kw}">{{ query.kw }}</a>
           </span>
         </span>
         <span *ngIf="queries.length == 0">

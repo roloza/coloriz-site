@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ApiService } from '../../../../services/api.service';
+import { Category } from '../../../../models/category';
 
 @Component({
   selector: 'app-coloriz-keywords-categories',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorizKeywordsCategoriesComponent implements OnInit {
 
-  constructor() { }
+  public categories: Array<Category> = [];
+  public all = false;
+
+  modalRef: BsModalRef;
+
+  constructor(
+    private apiService: ApiService,
+    private modalService: BsModalService
+  ) { }
 
   ngOnInit() {
+    this.apiService.getCategories().subscribe(
+      data => {
+        this.categories = data;
+      }
+    )
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  closeModal() {
+    if (!this.modalRef) {
+      return;
+    }
+
+    this.modalRef.hide();
+    this.modalRef = null;
   }
 
 }
