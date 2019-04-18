@@ -29,7 +29,7 @@ export class ColorizQueryFormComponent implements OnInit {
       data => {
         this.tagsAc = data;
       }
-    )
+    );
   }
 
   onSubmit() {

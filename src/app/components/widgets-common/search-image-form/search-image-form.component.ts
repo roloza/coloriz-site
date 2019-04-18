@@ -29,7 +29,7 @@ export class SearchImageFormComponent implements OnInit {
       data => {
         this.tagsAc = data;
       }
-    )
+    );
   }
 
   onSubmit() {

@@ -76,10 +76,10 @@ export class ApiService {
                 reject(xhr.response);
             }
         }
-      }
+      };
       xhr.open('POST', this.url + 'upload', true);
       xhr.send(formData);
-    })
+    });
   }
 
   getTags(): Observable<any> {

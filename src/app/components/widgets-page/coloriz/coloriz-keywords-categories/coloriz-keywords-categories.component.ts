@@ -25,7 +25,7 @@ export class ColorizKeywordsCategoriesComponent implements OnInit {
       data => {
         this.categories = data;
       }
-    )
+    );
   }
 
   openModal(template: TemplateRef<any>) {

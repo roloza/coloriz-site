@@ -32,7 +32,7 @@ export class KeywordsCategoryComponent implements OnInit {
             this.categoryName = data.name;
            this.tags = data.tags;
           }
-        )
+        );
       }
     );
 
@@ -40,7 +40,7 @@ export class KeywordsCategoryComponent implements OnInit {
       data => {
         this.categories = data;
       }
-    )
+    );
   }
 
 }
