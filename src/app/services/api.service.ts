@@ -94,6 +94,10 @@ export class ApiService {
     return this.httpClient.get(this.url + 'categories');
   }
 
+  getBrands(): Observable<any> {
+    return this.httpClient.get(this.url + 'brands');
+  }
+
 
 }
 

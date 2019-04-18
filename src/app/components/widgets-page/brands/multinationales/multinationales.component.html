@@ -1,0 +1,48 @@
+
+<div class="row mb-4 ng-star-inserted">
+  <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Ajouter une nouvelle marque</h5>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row row-eq-height mb-4" *ngIf="brands && brands.length > 0">
+  <div class="col-xl-4 col-lg-6 col-md-12">
+    <div class="card bg-dark text-white">
+      <div class="card-body">
+        <div class="vertical-center">
+          <h5 class="card-title text-white">Appliquer un filtre</h5>
+          <input type="text" class="form-control" name="searchString" placeholder="Rechercher une entreprise..." [(ngModel)]="searchString">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-6 col-md-12" *ngFor="let brand of brands | filter : 'name' : searchString">
+    <div class="card card-ecommerce-3 o-hidden mb-4">
+        <div class="d-flex flex-column flex-sm-row">
+          <div class="card-img-container">
+              <img class="img-fluid" [src]="brand.url">
+          </div>
+          <div class="flex-grow-1 p-4">
+              <h5 class="m-0 mb-3">{{ brand.name | uppercase }}</h5>
+              <div class="color-container">
+                <p class="text-muted">Couleur primaire</p>
+                <div class="area">
+                  <div class="color" [ngStyle]="{background: brand.color ? brand.color : '#FFF'}"></div>
+                </div>
+                <p class="text-muted mt-3">Palette</p>
+                <div *ngFor="let paletteColor of brand.palette" class="color"  [ngStyle]="{background: paletteColor ? paletteColor : '#FFF'}"></div>
+              </div>
+              <div class="actions">
+                <a [routerLink]="['/image-colors-details']" [queryParams]="{id: brand.id_image}" class="btn btn-rounded btn-outline-primary mt-3 float-right">
+                    Détails
+                </a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

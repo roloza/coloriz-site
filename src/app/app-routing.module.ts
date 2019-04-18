@@ -12,7 +12,8 @@ import { ScreenshotComponent } from './pages/browsershot/screenshot/screenshot.c
 import { DetailsComponent } from './pages/image-optimise/details/details.component';
 import { ColorDetailsComponent } from './pages/color-details/color-details.component';
 import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/keywords-category.component';
-
+import { BrandsComponent } from './pages/brands/brands.component';
+import { PageNotFoundComponent } from './components/template/others/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: 'image-compression', component: ImageOptimiseComponent },
   { path: 'image-compression/details', component: DetailsComponent },
   { path: 'image-colors-details', component: ColorDetailsComponent },
+  { path: 'brands', component: BrandsComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

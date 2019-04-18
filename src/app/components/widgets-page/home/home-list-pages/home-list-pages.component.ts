@@ -31,6 +31,12 @@ export class HomeListPagesComponent implements OnInit {
       link: 'image-compression',
       icon: 'i-Optimization',
       description: 'Optimisez le poids de vos images.'
+    },
+    {
+      title: 'Brands',
+      link: 'brands',
+      icon: 'i-Globe',
+      description: 'Quel choix de couleur fait une entreprise pour sa marque?'
     }
   ];
 

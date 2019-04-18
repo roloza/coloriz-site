@@ -50,6 +50,9 @@ import { OptimiseUserHitoryComponent } from './components/widgets-page/image-opt
 import { OptimiseBeforeAfterComponent } from './components/widgets-page/image-optimise/details/optimise-before-after/optimise-before-after.component';
 import { ColorDetailsComponent } from './pages/color-details/color-details.component';
 import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/keywords-category.component';
+import { BrandsComponent } from './pages/brands/brands.component';
+import { PageNotFoundComponent } from './components/template/others/page-not-found/page-not-found.component';
+import { MultinationalesComponent } from './components/widgets-page/brands/multinationales/multinationales.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +87,9 @@ import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/key
     OptimiseBeforeAfterComponent,
     ColorDetailsComponent,
     KeywordsCategoryComponent,
+    BrandsComponent,
+    PageNotFoundComponent,
+    MultinationalesComponent,
   ],
   imports: [
     BrowserModule,
