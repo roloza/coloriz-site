@@ -16,7 +16,7 @@ export class ScreenshotShowComponent implements OnInit {
   img: string;
   imgWidth: string;
   private sub;
-  
+
   constructor(
     private route: ActivatedRoute,
     private localStorageService: LocalStorageService,
@@ -30,7 +30,7 @@ export class ScreenshotShowComponent implements OnInit {
       .queryParams
       .subscribe(params => {
         this.id = params['id'] || '';
-        if (this.id == '') {
+        if (this.id === '') {
             this.router.navigate(['browsershot']);
         }
         this.apiService.showBrowsershot(this.id).subscribe(
@@ -39,9 +39,13 @@ export class ScreenshotShowComponent implements OnInit {
             if (data.state === 'error') {
               this.router.navigate(['browsershot']);
             } else {
+              console.log(data);
               this.localStorageService.storeItem(this.id, 'screenshot', 12);
               this.img = data.results.image.url;
               this.imgWidth = data.results.image.width;
+              if (data.results.params.type === 'mobile') {
+                this.imgWidth = '480';
+              }
             }
           }
         )

@@ -6,7 +6,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -106,6 +106,7 @@ import { MultinationalesComponent } from './components/widgets-page/brands/multi
     TypeaheadModule.forRoot(),
     TabsModule.forRoot(),
     HighchartsChartModule,
+    NgScrollbarModule,
   ],
   exports: [
     ThousandSuffixesPipe,

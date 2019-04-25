@@ -6,4 +6,5 @@ export class Brand {
     slug: string;
     color: string;
     palette: string[];
+    colorName: string;
 }

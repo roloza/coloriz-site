@@ -41,7 +41,6 @@ export class ApiService {
   }
 
   postBrowsershot(params: string[]): Observable<any> {
-    console.log(params);
     const httpParams = new HttpParams()
       .append('url', params[0])
       .append('type', params[1])

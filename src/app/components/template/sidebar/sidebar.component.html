@@ -1,7 +1,14 @@
 <div class="side-content-wrap">
   <div class="sidebar-left" [ngClass]="menuState" data-perfect-scrollbar data-suppress-scroll-x="true">
+
       <ul class="navigation-left">
-            <li class="nav-item" data-item="Accueil" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <ng-scrollbar #scrollable
+          [trackX]="true"
+          [autoUpdate]="true"
+          [compact]="true"
+          [shown]="shown">
+
+              <li class="nav-item" data-item="Accueil" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-item-hold" routerLink="/" >
                     <i class="nav-icon i-Home1"></i>
                     <span class="nav-text">Accueil</span>
@@ -43,7 +50,9 @@
               </a>
               <div class="triangle"></div>
           </li>
+        </ng-scrollbar>
       </ul>
   </div>
+
 </div>
 <!--=============== Left side End ================-->

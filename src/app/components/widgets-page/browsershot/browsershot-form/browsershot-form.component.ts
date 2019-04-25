@@ -12,12 +12,12 @@ import { ApiService } from '../../../../services/api.service';
 })
 export class BrowsershotFormComponent implements OnInit {
 
-  type: String = 'desktop';
-  device: String = 'desktop';
-  width: String = '1920';
-  height: String = '1080';
-  fullpage: String = 'Ligne de flottaison';
-  fullpageBool = false;
+  type = 'desktop';
+  device = 'desktop';
+  width = '1920';
+  height = '1080';
+  fullpage = 'Ligne de flottaison';
+  fullpageBool = 0;
 
   browsershotForm = this.fb.group({
     url: ['', Validators.required]

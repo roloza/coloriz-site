@@ -17,7 +17,7 @@ export class BrandsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.apiService.getBrands().subscribe(
+    /*this.apiService.getBrands().subscribe(
       data => {
         data.forEach(element => {
           this.brands.push({
@@ -27,12 +27,13 @@ export class BrandsComponent implements OnInit {
             url: element.url,
             slug: element.slug,
             color: element.images.color,
-            palette: JSON.parse(element.images.palette)
+            palette: JSON.parse(element.images.palette),
+            colorName: element.images.color_name
+
           });
         });
-        console.log(this.brands);
       }
-    )
+    )*/
 
   }
 

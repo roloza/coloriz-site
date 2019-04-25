@@ -9,13 +9,20 @@
     </div>
 </div>
 
-<div class="row row-eq-height mb-4" *ngIf="brands && brands.length > 0">
+<div class="row row-eq-height mb-4" style="min-height:356px;">
   <div class="col-xl-4 col-lg-6 col-md-12">
     <div class="card bg-dark text-white">
       <div class="card-body">
         <div class="vertical-center">
           <h5 class="card-title text-white">Appliquer un filtre</h5>
           <input type="text" class="form-control" name="searchString" placeholder="Rechercher une entreprise..." [(ngModel)]="searchString">
+          <div class="mt-4">
+            <span>Par couleur :</span>
+            <ul class="colors">
+              <li *ngFor="let color of colors" [ngClass]="color" (click)="filterColor(color)"></li>
+              <li *ngIf="allBrands.length != brands.length" (click)="filterColor('')"><i class="i-Close"></i></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
