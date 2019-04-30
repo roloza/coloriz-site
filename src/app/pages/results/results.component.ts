@@ -11,9 +11,11 @@ import { LocalStorageService } from '../../services/local-storage.service';
 })
 export class ResultsComponent implements OnInit {
   public query: string;
-  public images: Image;
+  public images: Image[] = [];
+  public querySlug: string;
   private sub;
-  public showLoader: boolean = true;
+  public showLoader = true;
+  public showError = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,19 +32,50 @@ export class ResultsComponent implements OnInit {
         if (this.query !== '') {
           this.localStorageService.storeItem(this.query, 'queries', 30);
 
-          this.images = null;
+          this.images = [];
           this.showLoader = true;
-          this.apiService.getImages(this.query).subscribe(
+          this.apiService.showColoriz(this.query).subscribe(
             data => {
-              this.images = data;
-              if (this.images.results.length === 0) {
-                this.apiService.postImages(this.query).subscribe(
-                  data => {
-                    this.images = data;
-                    this.showLoader = false;
+              this.querySlug = data.slug ? data.slug : '';
+              if (data.results) {
+                data.results.forEach(element => {
+                  this.images.push({
+                    'id': element.id,
+                    'color': element.color,
+                    'palette': JSON.parse(element.palette),
+                    'color_fullname': element.color_fullname,
+                    'color_name': element.color_name,
+                    'url': element.url,
+                    'name': element.name
                   });
+                });
+              }
 
+              if (data.state === 'error') {
+                this.apiService.postColoriz(this.query).subscribe(
+                  data2 => {
+                    if (data2.state === 'error') {
+                      this.showError = true;
+                    }
+                    this.querySlug = data2.slug ? data2.slug : '';
+                    if (data2.results) {
+                      data2.results.forEach(element => {
+                        this.images.push({
+                          'id': element.id,
+                          'color': element.color,
+                          'palette': JSON.parse(element.palette),
+                          'color_fullname': element.color_fullname,
+                          'color_name': element.color_name,
+                          'url': element.url,
+                          'name': element.name
+                        });
+                      });
+                    }
+                    this.showLoader = false;
+                  }
+                );
               } else {
+
                 this.showLoader = false;
               }
             }

@@ -1,5 +1,9 @@
 export class Image {
-    query: string;
-    results: string[];
-    slug: string;
+    id: number;
+    color: string;
+    palette: string[];
+    color_fullname: string;
+    color_name: string;
+    url: string;
+    name: string;
 }

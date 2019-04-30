@@ -1,19 +1,19 @@
 <div class="overlay-actions">
-    <a [routerLink]="['/image-colors-details']" [queryParams]="{id: id}" class="btn btn-primary btn-rounded"><i class="i-Remove"></i> Détails</a>
+    <a [routerLink]="['/image-colors-details']" [queryParams]="{id: image.id}" class="btn btn-primary btn-rounded"><i class="i-Remove"></i> Détails</a>
 </div>
 <div class="card text-left search-result  image-result">
   <div class="card-body card-palette">
-    <div class="palette-img-container" [ngStyle]="{background: color ? color : '#FFF'}">
-      <img [src]="path">
+    <div class="palette-img-container" [ngStyle]="{background: image.color ? image.color : '#FFF'}">
+      <img [src]="image.url">
     </div>
     <div class="content">
       <h4>Code couleur</h4>
       <div class="area mb-4">
-        <div class="number">{{ color }}</div>
+        <div class="number">{{ image.color }}</div>
       </div>
       <h4>Palette</h4>
       <div class="area">
-        <div *ngFor="let paletteColor of palette" class="color"  [ngStyle]="{background: paletteColor ? paletteColor : '#FFF'}"></div>
+        <div *ngFor="let paletteColor of image.palette" class="color"  [ngStyle]="{background: paletteColor ? paletteColor : '#FFF'}"></div>
       </div>
     </div>
   </div>

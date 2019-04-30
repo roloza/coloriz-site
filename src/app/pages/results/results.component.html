@@ -4,15 +4,15 @@
 <div class="separator-breadcrumb border-top"></div>
 
 <div class="row" *ngIf="images" >
-  <app-images-results class="col-xl-3 col-lg-4 col-md-6 mb-4 image-result" *ngFor="let image of images.results"
-    [name]='image.name'
-    [path]='image.path'
-    [color]='image.color'
-    [palette]='image.palette'
-    [id]='image.id_image'>
+  <app-images-results class="col-xl-3 col-lg-4 col-md-6 mb-4 image-result" *ngFor="let image of images"
+    [image]='image'
+    [querySlug]='querySlug'>
   </app-images-results>
 </div>
-
+<div *ngIf="showError">
+  <p >Nous n'avons trouvé aucune image correspondant à votre requête.<br>
+  Essayez de la reformuler</p>
+</div>
 <div class="loader" *ngIf="showLoader">
   <div class="loader-bubble loader-bubble-primary m-5"></div>
   <h5>Chargement en cours ...</h5>

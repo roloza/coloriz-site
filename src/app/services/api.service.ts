@@ -27,6 +27,15 @@ export class ApiService {
     return this.httpClient.post(this.url + 'images', httpParams);
   }
 
+  postColoriz(query: string): Observable<any> {
+    const httpParams = new HttpParams().append('q', query);
+    return this.httpClient.post(this.url + 'coloriz', httpParams);
+  }
+
+  showColoriz(query: string): Observable<any> {
+    return this.httpClient.get(this.url + 'coloriz/' + query);
+  }
+
   getImage(id: string): Observable<any> {
     return this.httpClient.get(this.url + 'image/' + id);
   }
@@ -35,8 +44,10 @@ export class ApiService {
     return this.httpClient.get(this.url + 'colors/' + id);
   }
 
-  postColor(img: string): Observable<any> {
-    const httpParams = new HttpParams().append('img', img);
+  postColor(img: string, slug: string = ''): Observable<any> {
+    const httpParams = new HttpParams()
+      .append('img', img)
+      .append('slug', slug);
     return this.httpClient.post(this.url + 'colors', httpParams);
   }
 
