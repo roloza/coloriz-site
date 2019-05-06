@@ -1,13 +1,71 @@
-<div class="card mb-4" *ngIf="img">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="img-container o-hidden browser" *ngIf="imgWidth" [ngStyle]="{maxWidth:imgWidth + 'px'}" style="margin: auto">
-          <div class="browser-mockup with-url">
-            <img class="img-fluid" src="{{ img }}">
+<div class="row" style="margin-bottom: 10px;" *ngIf="data">
+
+
+  <div class="col-lg-8">
+
+    <div class="md-imac md-glare mb-4" *ngIf="data.results.params.type === 'desktop'">
+      <div class="md-body">
+        <div class="md-top">
+          <div class="md-camera"></div>
+            <div class="md-screen">
+              <img src="{{ data.results.image.url }}">
+            </div>
           </div>
+      </div>
+      <div class="md-base">
+        <div class="md-stand"></div>
+        <div class="md-foot"></div>
+      </div>
+    </div>
+
+    <div class="md-iphone-5 md-white-device md-glare mb-4" *ngIf="data.results.params.type == 'mobile'">
+      <div class="md-body">
+        <div class="md-buttons"></div>
+        <div class="md-front-camera"></div>
+        <div class="md-top-speaker"></div>
+        <div class="md-screen">
+          <img src="{{ data.results.image.url }}">
+        </div>
+        <button class="md-home-button"></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="col-lg-4">
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <h4 class="card-title mb-3">Détails</h4>
+              <tr *ngIf="data.results.params.type === 'desktop'">
+                <td>Résolution</td>
+                <td>{{ data.results.params.width }}x{{ data.results.params.height }}</td>
+              </tr>
+              <tr>
+                <td>Device</td>
+                <td>{{ data.results.params.type }}</td>
+              </tr>
+              <tr>
+                <td>Url</td>
+                <td><a target="_BLANK" [href]="data.results.params.url">{{ data.results.params.url }}</a></td>
+              </tr>
+              <tr>
+                <td>Hauteur</td>
+                <td>{{ data.results.params.fullpage == 1 ? 'Toute la page' : 'Ligne de flottaison' }}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><a target="_blank" class="btn btn-primary btn-block m-1" type="button" [href]="data.results.image.url" download><i class=" i-Download1"></i> Téléchargement</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
+
 </div>

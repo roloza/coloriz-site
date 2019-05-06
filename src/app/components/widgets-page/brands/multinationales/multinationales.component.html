@@ -1,14 +1,4 @@
 
-<div class="row mb-4 ng-star-inserted">
-  <div class="col-6">
-      <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Ajouter une nouvelle marque</h5>
-        </div>
-      </div>
-    </div>
-</div>
-
 <div class="row row-eq-height mb-4" style="min-height:356px;">
   <div class="col-xl-4 col-lg-6 col-md-12">
     <div class="card bg-dark text-white">
@@ -22,6 +12,10 @@
               <li *ngFor="let color of colors" [ngClass]="color" (click)="filterColor(color)"></li>
               <li *ngIf="allBrands.length != brands.length" (click)="filterColor('')"><i class="i-Close"></i></li>
             </ul>
+          </div>
+          <div class="mt-4">
+            <div class="mb-2">Vous ne trouvez pas le logo de votre marque ?</div>
+            <button class="btn btn-outline-light">Rechercher une marque</button>
           </div>
         </div>
       </div>

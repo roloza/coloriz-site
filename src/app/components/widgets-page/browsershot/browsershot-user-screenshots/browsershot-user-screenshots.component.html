@@ -1,4 +1,4 @@
-<div class="card mb-4">
+<!--div class="card mb-4">
   <div class="card-body">
       <h5 class="card-title">Vos dernières captures d'écran</h5>
       <div class="row">
@@ -15,6 +15,48 @@
               </div>
             </a>
         </div>
+    </div>
+  </div>
+</div-->
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Vos dernières captures d'écran</h5>
+    <div class="row">
+      <div class="col mb-4" *ngFor="let userScreenshot of userScreenshots">
+        <a [routerLink]="['screenshot']" [queryParams]="{'id': userScreenshot.id}">
+          <div class="md-imac md-glare" *ngIf="userScreenshot.device == 'desktop'">
+              <div class="md-body">
+                  <div class="md-top">
+                      <div class="md-camera"></div>
+
+                      <div class="md-screen">
+                          <img [src]="userScreenshot.imageUrl">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="md-base">
+                  <div class="md-stand"></div>
+                  <div class="md-foot"></div>
+              </div>
+          </div>
+
+
+          <div class="md-iphone-5 md-white-device md-glare" *ngIf="userScreenshot.device == 'mobile'">
+              <div class="md-body">
+                <div class="md-buttons"></div>
+                <div class="md-front-camera"></div>
+                <div class="md-top-speaker"></div>
+
+                <div class="md-screen">
+                    <img [src]="userScreenshot.imageUrl">
+                </div>
+
+                <button class="md-home-button"></button>
+            </div>
+          </div>
+      </a>
     </div>
   </div>
 </div>

@@ -53,6 +53,7 @@ import { KeywordsCategoryComponent } from './pages/coloriz/keywords-category/key
 import { BrandsComponent } from './pages/brands/brands.component';
 import { PageNotFoundComponent } from './components/template/others/page-not-found/page-not-found.component';
 import { MultinationalesComponent } from './components/widgets-page/brands/multinationales/multinationales.component';
+import { ModalAddBrandComponent } from './components/widgets-page/brands/modal-add-brand/modal-add-brand.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { MultinationalesComponent } from './components/widgets-page/brands/multi
     BrandsComponent,
     PageNotFoundComponent,
     MultinationalesComponent,
+    ModalAddBrandComponent,
   ],
   imports: [
     BrowserModule,

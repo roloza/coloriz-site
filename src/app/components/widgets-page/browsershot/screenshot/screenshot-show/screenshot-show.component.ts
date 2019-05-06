@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../../../../services/api.service';
 import { LocalStorageService } from '../../../../../services/local-storage.service';
+import { Image } from '../../../../../models/image';
+import { browser } from 'protractor';
 
 @Component({
   selector: 'app-screenshot-show',
@@ -14,7 +16,8 @@ export class ScreenshotShowComponent implements OnInit {
   showLoader: boolean;
   id: string;
   img: string;
-  imgWidth: string;
+  type: string;
+  data: any;
   private sub;
 
   constructor(
@@ -39,13 +42,8 @@ export class ScreenshotShowComponent implements OnInit {
             if (data.state === 'error') {
               this.router.navigate(['browsershot']);
             } else {
-              console.log(data);
               this.localStorageService.storeItem(this.id, 'screenshot', 12);
-              this.img = data.results.image.url;
-              this.imgWidth = data.results.image.width;
-              if (data.results.params.type === 'mobile') {
-                this.imgWidth = '480';
-              }
+              this.data = data;
             }
           }
         )
@@ -56,4 +54,5 @@ export class ScreenshotShowComponent implements OnInit {
 
       });
   }
+
 }

@@ -20,10 +20,12 @@ export class BrowsershotUserScreenshotsComponent implements OnInit {
       this.apiService.showBrowsershot(element).subscribe(
         data => {
           if (data.results) {
+            console.log(data.results.params.type);
             this.userScreenshots.push({
               id: element,
               imageUrl: data.results.image.url,
-              url: data.results.params.url
+              url: data.results.params.url,
+              device: data.results.params.type
             });
           }
         }
