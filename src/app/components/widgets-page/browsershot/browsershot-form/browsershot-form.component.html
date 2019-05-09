@@ -6,7 +6,15 @@
               <form [formGroup]="browsershotForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                   <div class="col" style="padding-right: 5px; padding-left: 5px;">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <select formControlName="protocole" class="custom-select" [value]='1'>
+                          <option value="1">https://</option>
+                          <option value="2">http://</option>
+                        </select>
+                      </div>
                       <input formControlName="url" type="text" class="form-control" placeholder="URL du site">
+                    </div>
                   </div>
                   <div class="col-auto" style="padding-left: 5px;">
                       <button class="btn btn-primary btn-search" *ngIf="!showLoader">

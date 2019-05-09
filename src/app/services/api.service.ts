@@ -108,7 +108,27 @@ export class ApiService {
     return this.httpClient.get(this.url + 'brands');
   }
 
+  showBrand(id: number): Observable<any> {
+    return this.httpClient.get(this.url + 'brands/' + id);
+  }
 
+  postBrand(query: string): Observable<any> {
+    const httpParams = new HttpParams().append('q', query);
+    return this.httpClient.post(this.url + 'brands', httpParams);
+  }
+
+
+  getBrandImagesLinks(query: string): Observable<any> {
+    return this.httpClient.get(this.url + 'brand-query-urls?q=' + query);
+  }
+
+  updateBrandImagesLinks(id: number, url: string): Observable<any> {
+    return this.httpClient.get(this.url + 'brand-query-urls/update/' + id + '/?url=' + url);
+  }
+
+  saveBrandImagesLinks(id: number, idImage: number): Observable<any> {
+    return this.httpClient.get(this.url + 'brand-query-urls/save/' + id + '/' + idImage);
+  }
 }
 
 

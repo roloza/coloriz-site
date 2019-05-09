@@ -1,0 +1,36 @@
+.card-img-container {
+  width: 33%;
+  height: 260px;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.area {
+  padding: 0;
+}
+.area .color {
+  width: 100%;
+}
+
+.brand-img-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.brand-img-list img {
+  width: 50px;
+}
+
+.brand-img-list img:hover {
+  cursor: pointer;
+}

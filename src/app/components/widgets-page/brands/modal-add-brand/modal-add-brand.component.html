@@ -1,3 +1,71 @@
-<p>
-  modal-add-brand works!
-</p>
+<div role="document" class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Rechercher une marque</h4>
+      <button aria-label="Close" class="close" type="button" (click)="close()"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="addBrandForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col" style="padding-right: 5px; padding-left: 5px;">
+                  <input formControlName="name" type="text" class="form-control" placeholder="Nom de la marque">
+              </div>
+              <div class="col-auto" style="padding-left: 5px;">
+                  <button class="btn btn-primary btn-search" *ngIf="!showLoader">
+                    <i class="i-Magnifi-Glass1"></i>
+                  </button>
+                  <button class="btn btn-primary" type="button" disabled *ngIf="showLoader">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Chargement...
+                  </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="mt-4" *ngIf="brand">
+            <div class="card card-ecommerce-3 o-hidden mb-4">
+              <div class="d-flex flex-column flex-sm-row">
+                <div class="card-img-container">
+                    <img class="img-fluid" [src]="brand.url">
+                </div>
+                <div class="flex-grow-1 p-4">
+                  <h5 class="m-0 mb-3">{{ brand.name | uppercase }}</h5>
+                  <div class="color-container">
+                    <p class="text-muted">Couleur primaire</p>
+                    <div class="area">
+                      <div class="color" [ngStyle]="{background: brand.color ? brand.color : '#FFF'}"></div>
+                    </div>
+                    <p class="text-muted mt-3">Palette</p>
+                    <div *ngFor="let paletteColor of brand.palette" class="color"  [ngStyle]="{background: paletteColor ? paletteColor : '#FFF'}"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4" *ngIf="brand">
+            <h5 class="mb-4">Plus de logos pour la marque <strong>{{ brand.name | uppercase }}</strong></h5>
+            <div *ngIf="!brandImagesLinks">
+              <button class="btn btn-primary btn-search" *ngIf="!showLoader2" (click)="refreshLogos(brand.name)">
+                Actualiser
+              </button>
+              <button class="btn btn-primary" type="button" disabled *ngIf="showLoader2">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Chargement...
+              </button>
+            </div>
+            <div *ngIf="brandImagesLinks">
+              <ul class="brand-img-list mb-4">
+                <li *ngFor="let brandImageLink of brandImagesLinks">
+                  <img [src]="brandImageLink" (click)="updateBrandImage(brandImageLink)">
+                </li>
+              </ul>
+              <p>Cliquez sur une image pour la sélectionner</p>
+            </div>
+          </div>
+    </div>
+    <div class="modal-footer">
+      <button  class="btn btn-outline-secondary" type="button" (click)="close()">Annuler</button>
+      <button class="btn btn-primary" type="button" (click)="saveBrandImage()">Enregistrer</button>
+    </div>
+  </div>
+</div>

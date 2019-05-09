@@ -17,10 +17,11 @@ export class BrowsershotFormComponent implements OnInit {
   width = '1920';
   height = '1080';
   fullpage = 'Ligne de flottaison';
-  fullpageBool = 0;
+  fullpageBool = '0';
 
   browsershotForm = this.fb.group({
-    url: ['', Validators.required]
+    url: ['', Validators.required],
+    protocole: ['', Validators.required],
   });
   paramsForm = this.fb.group({
     type: [this.type, Validators.required],
@@ -47,8 +48,12 @@ export class BrowsershotFormComponent implements OnInit {
 
   onSubmit() {
     this.showLoader = true;
+    const protocole: string = this.browsershotForm.value['protocole'] === '2' ? 'http://' : 'https://';
+    const urlValue = this.browsershotForm.value['url']
+    const url = urlValue.startsWith('http') ? urlValue : protocole + urlValue;
+
     this.apiService.postBrowsershot([
-      this.browsershotForm.value['url'],
+      url,
       this.type,
       this.device,
       this.width,

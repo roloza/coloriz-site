@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../../../services/api.service';
 import { Brand } from '../../../../models/brand';
+import { ModalDirective } from "ngx-bootstrap/modal";
+import { LocalStorageService } from '../../../../services/local-storage.service';
 
 @Component({
   selector: 'app-multinationales',
@@ -15,9 +17,12 @@ export class MultinationalesComponent implements OnInit {
   max: number;
   pageMax = 12;
   colors = ['rouge', 'jaune', 'bleu', 'vert', 'rose', 'orange', 'violet', 'marron', 'gris', 'noir', 'blanc'];
+  @ViewChild('addBrandModal') addBrandModal: ModalDirective;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private localStorageService: LocalStorageService,
+
   ) { }
 
   ngOnInit() {
@@ -39,8 +44,25 @@ export class MultinationalesComponent implements OnInit {
         this.max = data.length;
         this.allBrands = this.brands;
       }
-    )
+    );
 
+    const elements = this.localStorageService.getItems('brands');
+    elements.forEach(element => {
+      this.apiService.showBrand(element).subscribe(
+        data => {
+          this.brands.push({
+            id: data.id,
+            id_image: data.id_image,
+            name: data.name,
+            url: data.url,
+            slug: data.slug,
+            color: data.images.color,
+            palette: JSON.parse(data.images.palette),
+            colorName: data.images.color_name.toLowerCase()
+          });
+        }
+      );
+    });
   }
 
   showMore() {
@@ -69,5 +91,9 @@ export class MultinationalesComponent implements OnInit {
     }
 
   }
+
+  addBrand() {
+    this.addBrandModal.show();
+}
 
 }
