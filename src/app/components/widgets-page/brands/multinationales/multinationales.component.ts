@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../../../services/api.service';
 import { Brand } from '../../../../models/brand';
-import { ModalDirective } from "ngx-bootstrap/modal";
+import { ModalDirective } from 'ngx-bootstrap/modal';
 import { LocalStorageService } from '../../../../services/local-storage.service';
 
 @Component({

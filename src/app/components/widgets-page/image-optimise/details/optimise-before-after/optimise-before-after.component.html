@@ -38,7 +38,7 @@
           </div>
           <div class="row">
               <div class="col-9" style="padding-right:0;">
-                  <button (click)="download()" class="btn btn-lg btn-primary btn-block btn-custom-left"><i class="i-Download1"></i> Télécharger</button>
+                  <a [href]="result.fileCompress.url"  target="_blank" download class="btn btn-lg btn-primary btn-block btn-custom-left"><i class="i-Download1"></i> Télécharger</a>
               </div>
               <div class="col-3" style="padding-left:0;">
                   <a routerLink="/image-compression" class="btn btn-lg btn-outline-secondary btn-block btn-custom-right"><i class="i-Back1"></i> Retour</a>
