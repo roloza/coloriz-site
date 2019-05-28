@@ -22,6 +22,10 @@ export class ApiService {
     return this.httpClient.get(this.url + 'images?type=best-queries');
   }
 
+  getcolorKeywords(): Observable<any> {
+    return this.httpClient.get(this.url + 'coloriz/?type=colorsKw');
+  }
+
   postImages(query: string): Observable<any> {
     const httpParams = new HttpParams().append('q', query);
     return this.httpClient.post(this.url + 'images', httpParams);

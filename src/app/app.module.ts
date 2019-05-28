@@ -54,6 +54,7 @@ import { BrandsComponent } from './pages/brands/brands.component';
 import { PageNotFoundComponent } from './components/template/others/page-not-found/page-not-found.component';
 import { MultinationalesComponent } from './components/widgets-page/brands/multinationales/multinationales.component';
 import { ModalAddBrandComponent } from './components/widgets-page/brands/modal-add-brand/modal-add-brand.component';
+import { ColorizKeywordsColorComponent } from './components/widgets-page/coloriz/coloriz-keywords-color/coloriz-keywords-color.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { ModalAddBrandComponent } from './components/widgets-page/brands/modal-a
     PageNotFoundComponent,
     MultinationalesComponent,
     ModalAddBrandComponent,
+    ColorizKeywordsColorComponent,
   ],
   imports: [
     BrowserModule,

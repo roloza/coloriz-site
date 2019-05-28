@@ -1,0 +1,111 @@
+.badge::first-letter {
+  text-transform: uppercase;
+}
+
+.badge-middle-container .badge {
+  font-size: 1.1em;
+}
+
+.tag {
+  background: #639;
+  font-size: 1.1em;
+  padding: 5px 10px 5px 15px;
+  clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 10px 100%, 0 50%);
+  -webkit-clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 10px 100%, 0 50%);
+  cursor: pointer;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+.tag:hover {
+  color: #FFF;
+  opacity: 0.9;
+}
+.tag::first-letter {
+  text-transform: capitalize;
+}
+
+.tag-primary {
+  background: #639;
+}
+.tag-secondary {
+  background: #52495a;
+}
+.tag-success {
+  background: #4caf50;
+}
+.tag-danger {
+  background: #d22346;
+}
+.tag-info {
+  background: #263db5;
+}
+.tag-dark {
+  background: #47404f;
+}
+.tag-light {
+  background: #bbb;
+}
+
+.color-column {
+  background: #F1F1F1;
+  padding: 20px 40px;
+}
+
+.color-column ul  {
+  list-style-type: none;
+  padding-left: 1em;
+}
+
+.color-column ul li:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.color-column ul li.active {
+  font-weight: bold;
+
+}
+
+ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  font-size: 1.3em;
+}
+
+.colors li.rouge::before, .color-column ul li.active.rouge {
+  color:#91283B;
+}
+
+.colors li.jaune::before, .color-column ul li.active.jaune {
+  color:#F0C300;
+}
+.colors li.bleu::before, .color-column ul li.active.bleu {
+  color:#318CE7;
+}
+.colors li.vert::before, .color-column ul li.active.vert {
+  color:#18391E;
+}
+.colors li.rose::before, .color-column ul li.active.rose {
+  color:#DE3163;
+}
+.colors li.marron::before, .color-column ul li.active.marron {
+  color:#88421D;
+}
+.colors li.orange::before, .color-column ul li.active.orange {
+  color:#E67E30;
+}
+.colors li.violet::before, .color-column ul li.active.violet {
+  color:#884DA7;
+}
+.colors li.gris::before, .color-column ul li.active.gris {
+  color:#5A5E6B;
+}
+.colors li.noir::before, .color-column ul li.active.noir {
+  color:#3F2204;
+}
+.colors li.blanc::before, .color-column ul li.active.blanc {
+  color:#FFF;
+}
